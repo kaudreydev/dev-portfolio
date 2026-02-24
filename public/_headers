@@ -1,0 +1,10 @@
+*
+    Cross-Origin-Embedder-Policy: require-corp
+    Cross-Origin-Opener-Policy: same-origin
+    Cross-Origin-Resource-Policy: cross-origin
+    Content-Security-Policy: default-src * https://astro-naut.statichost.eu/; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://astro-naut.statichost.eu/ data:
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Referrer-Policy: strict-origin-when-cross-origin
+    Upgrade-Insecure-Requests: 1
+    X-Content-Type-Options: nosniff
+    X-Frame-Options: DENY
