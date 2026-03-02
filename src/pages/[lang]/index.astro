@@ -1,0 +1,48 @@
+---
+export const getStaticPaths = () => {
+  return [{ params: { lang: "en" } }];
+};
+
+import { useI18n } from "@ariaskit/astro-i18n";
+import DeleteMe from "@components/DeleteMe.astro";
+import Header from "@components/Header.astro";
+import Layout from "@layouts/Layout.astro";
+import BackToTop from "@utils/BackToTop.astro";
+import SkipLink from "@utils/SkipLink.astro";
+import { type LocaleSchema } from "~/types";
+
+const { t, locale } = useI18n<LocaleSchema>({
+  ssg: {
+    astro: Astro,
+  },
+});
+
+const nav = [
+  { path: `/`, text: t("nav.about") },
+  { path: `#${t("nav.experience")}`, text: t("nav.experience") },
+  { path: `#${t("nav.projects")}`, text: t("nav.projects") },
+  { path: `#${t("nav.contact")}`, text: t("nav.contact") },
+];
+
+const alternate = [
+  { href: "/es", hreflang: "es" },
+  { href: "/en", hreflang: "en" },
+  { href: "/pt", hreflang: "pt" },
+];
+---
+
+<Layout
+  locale={locale}
+  title="KAudreyDev"
+  description={t("description")}
+  alternateLinks={alternate}
+>
+  <SkipLink />
+  <div class="sr-only" id="start"></div>
+  <Header nav={nav} locales={["en"]} currentLocale={locale} />
+  <DeleteMe />
+  <section aria-label="Utilities">
+    <!-- You could also add a theme switch here or anything considered a utility -->
+    <BackToTop />
+  </section>
+</Layout>

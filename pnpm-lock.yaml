@@ -8,15 +8,24 @@ importers:
 
   .:
     dependencies:
+      '@ariaskit/astro-i18n':
+        specifier: ^0.0.8
+        version: 0.0.8(astro@5.17.3(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
       '@astrojs/check':
         specifier: ^0.9.4
         version: 0.9.6(prettier-plugin-astro@0.14.1)(prettier@3.8.1)(typescript@5.9.3)
       astro:
         specifier: ^5.1.1
         version: 5.17.3(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2)
-      sharp:
-        specifier: ^0.34.5
-        version: 0.34.5
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      tailwind-merge:
+        specifier: ^3.5.0
+        version: 3.5.0
+      tailwindcss:
+        specifier: ^4.2.1
+        version: 4.2.1
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
@@ -30,8 +39,17 @@ importers:
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
+      sharp:
+        specifier: ^0.34.5
+        version: 0.34.5
 
 packages:
+
+  '@ariaskit/astro-i18n@0.0.8':
+    resolution: {integrity: sha512-7sWEioWdtCofnZZWJtdYndtkRiBIrLUO8Z1Ezo8qxY5dG+mPWzdqDipL3b0BMBF/duKI5lRwT0X5/tj+QyPfiQ==}
+    hasBin: true
+    peerDependencies:
+      astro: '>=5.0.0'
 
   '@astrojs/check@0.9.6':
     resolution: {integrity: sha512-jlaEu5SxvSgmfGIFfNgcn5/f+29H61NJzEMfAZ82Xopr4XBchXB1GVlcJsE+elUlsYSbXlptZLX+JMG3b/wZEA==}
@@ -1618,6 +1636,12 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
+  tailwind-merge@3.5.0:
+    resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
+
+  tailwindcss@4.2.1:
+    resolution: {integrity: sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==}
+
   tiny-inflate@1.0.3:
     resolution: {integrity: sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==}
 
@@ -1994,6 +2018,10 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@ariaskit/astro-i18n@0.0.8(astro@5.17.3(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))':
+    dependencies:
+      astro: 5.17.3(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2)
 
   '@astrojs/check@0.9.6(prettier-plugin-astro@0.14.1)(prettier@3.8.1)(typescript@5.9.3)':
     dependencies:
@@ -3789,6 +3817,10 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.1
       sax: 1.4.4
+
+  tailwind-merge@3.5.0: {}
+
+  tailwindcss@4.2.1: {}
 
   tiny-inflate@1.0.3: {}
 
