@@ -1,0 +1,18 @@
+[
+  {
+    "id": "job-2",
+    "company": "CGI",
+    "title": "Web Developer Consultant",
+    "startDate": "2017-12-20",
+    "endDate": "2025-04-14",
+    "description": "Contributed to the development of large- and small-scale web applications using a variety of technologies for clients in the Canadian government and oil & gas industry."
+  },
+  {
+    "id": "job-1",
+    "company": "CIBC",
+    "title": "Advisory Application Developer",
+    "startDate": "2011-01-01",
+    "endDate": "2017-07-10",
+    "description": "As a member of the SharePoint intranet team, I supported and updated the company's intranet platform and developed tailored solutions for internal business partners that leveraged SharePoint infrastructure and content management features."
+  }
+]
