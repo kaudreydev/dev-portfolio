@@ -1,26 +1,33 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import type { Reference } from "~/types";
+import type { Project, Technology } from "~/types";
 
 const projectsCollection = await getCollection("projects");
-const allProjects = projectsCollection.map(
-  (entry: CollectionEntry<"projects">) => entry.data as Reference,
-);
+const allProjects = projectsCollection
+  .map((entry: CollectionEntry<"projects">) => entry.data as Project)
+  .sort(
+    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
+  );
 ---
 
 <section>
   <h2 id="projects">Projects</h2>
   <ul>
     {
-      allProjects.map((project: Reference) => (
+      allProjects.map((project: Project) => (
         <li>
           <div>
-            {project.title} - {project.company}
+            {project.name} - {project.company}
           </div>
           <div>
             {project.startDate} - {project.endDate}
           </div>
           <div>{project.description}</div>
+          <div>
+            {project.technologies.map((tech: Technology) => (
+              <span>{tech}</span>
+            ))}
+          </div>
         </li>
       ))
     }

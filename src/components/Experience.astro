@@ -3,9 +3,11 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import type { Reference } from "~/types";
 
 const experienceCollection = await getCollection("experience");
-const allJobs = experienceCollection.map(
-  (entry: CollectionEntry<"experience">) => entry.data as Reference,
-);
+const allJobs = experienceCollection
+  .map((entry: CollectionEntry<"experience">) => entry.data as Reference)
+  .sort(
+    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
+  );
 ---
 
 <section>

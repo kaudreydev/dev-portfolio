@@ -1,10 +1,90 @@
 [
   {
     "id": "project-1",
-    "company": "ABC",
-    "title": "Project ABC",
+    "company": "CIBC",
+    "name": "Outside Activities",
     "startDate": "2011-01-01",
-    "endDate": "2011-06-030",
-    "description": "Project ABC description."
+    "endDate": "2011-06-30",
+    "description": "Modified SharePoint forms using JavaScript to simplify and streamline the data entry process for employees submitting outside activity requests for approval. Created scripts to automate the import of Excel data previously used by the Compliance department to track and manage outside activity requests, improving data accuracy and reducing manual effort.",
+    "technologies": ["JavaScript", "SharePoint", "Excel", "Visual Basic"]
+  },
+  {
+    "id": "project-2",
+    "company": "CIBC",
+    "name": "SharePoint Intranet Platform Support",
+    "startDate": "2011-04-01",
+    "endDate": "2017-06-30",
+    "description": "Provided ongoing support and maintenance for the company's SharePoint intranet platform, ensuring its stability, security, and performance. Developed custom solutions and features to enhance the functionality of the intranet and meet the evolving needs of internal business partners.",
+    "technologies": ["C#/.NET", "JavaScript", "SharePoint"]
+  },
+  {
+    "id": "project-3",
+    "company": "CIBC",
+    "name": "Mobile-First Social Media Web App",
+    "startDate": "2014-03-01",
+    "endDate": "2015-02-28",
+    "description": "Led the development of a mobile-first social media web application for employees to share news, updates, and collaborate on projects. Utilized AngularJS for the frontend development and integrated with the SharePoint backend to leverage existing infrastructure and content management capabilities. Targeted platforms included iOS and BlackBerry devices used by corporate executives and senior management.",
+    "technologies": ["Agile", "AngularJS", "CSS", "JavaScript", "SharePoint"]
+  },
+  {
+    "id": "project-4",
+    "company": "CIBC",
+    "name": "Application Workflow for Enterprise Delivery Framework",
+    "startDate": "2016-11-01",
+    "endDate": "2017-06-30",
+    "description": "Designed and implemented an application workflow using SharePoint to support the Enterprise Delivery Framework (EDF) for project management and delivery. The workflow facilitated the tracking and management of project deliverables, milestones, and approvals, improving visibility and accountability across project teams and stakeholders. The project involved extensive and detailed analysis of existing data and data collection methodology for the purposes of classifying and typifying content across the application.",
+    "technologies": ["SharePoint"]
+  },
+  {
+    "id": "project-5",
+    "company": "CGI",
+    "name": "Financial Exchange Application for Canadian Government Client",
+    "startDate": "2017-12-20",
+    "endDate": "2020-03-30",
+    "description": "Contributed to the development of a large-scale web application for a Canadian government client, utilizing a variety of technologies such as Angular, Docker, GitHub Enterprise, and Jenkins. The application was designed to facilitate financial exchanges between financial institutions and government corporations using an elaborate, user-friendly interface. Project work was coordinated using the Agile development methodology, and a robust DevOps pipeline ensured seamless delivery and deployment of project features and iterations.",
+    "technologies": [
+      "Agile",
+      "Angular",
+      "Docker",
+      "GitHub Enterprise",
+      "Jenkins",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "id": "project-6",
+    "company": "CGI",
+    "name": "Automated Testing Tool for Canadian Government Client",
+    "startDate": "2021-09-01",
+    "endDate": "2022-08-31",
+    "description": "Worked extensively to develop robust user interface screens, allowing non-technical personnel to perform automated testing of other products and applications through a streamlined workflow. Established development approach and overall code structure, providing the direction and design methodology for all front-end development on the project. Offered input on application design and standards regarding accessibility and user experience. Created core component library based on standards to help keep codebase consistent, utilizing WET/BOEWS and GCWeb, the Canadian government standard for all web-based interfaces",
+    "technologies": ["Accessibility", "Agile"]
+  },
+  {
+    "id": "project-7",
+    "company": "CGI",
+    "name": "End-User Search Tool for Canadian Government Client",
+    "startDate": "2023-01-01",
+    "endDate": "2025-04-14",
+    "description": "During conceptualization phase of the project, worked to create TypeScript definitions for a component library and initial application design and structure using Next.js. Participated in and contributed to discussions on project direction and product purpose, paying special attention to accessibility requirements and ensuring any product we built would be useful to all Canadians, not just the majority. Engaged in collaborative activities and team building exercises according to Agile development methodology to ensure opportunities for input from all project personnel.",
+    "technologies": ["Agile", "Next.js", "React"]
+  },
+  {
+    "id": "project-8",
+    "company": "CGI",
+    "name": "Asset Search Application (Phase 2) for Oil & Gas Client",
+    "startDate": "2023-03-01",
+    "endDate": "2023-07-31",
+    "description": "Contributed to the second phase of Asset Search application using React and Node.js with data via Denodo views using SQL queries and compiled into Elasticsearch. Joined the project while underway after sudden departure of previous developer and was required to get up to speed and begin work almost immediately. In addition to expanding the UI and available data, also worked to simplify and streamline the development process by creating tailored Node.js and PowerShell scripts and performing a detailed analysis and remediation of the environment setup process.",
+    "technologies": ["Azure DevOps", "Elasticsearch", "Node.js", "React", "SQL"]
+  },
+  {
+    "id": "project-9",
+    "company": "CGI",
+    "name": "Asset Tracker Application Rewrite for Oil & Gas Client",
+    "startDate": "2023-07-31",
+    "endDate": "2024-07-31",
+    "description": "Designed modernization of existing Asset Tracker application previously built on MS Access. Updated application would be built using React and Next.js with a .NET API and Oracle DB. Application designed from the ground-up to utilize a fresh UI design using Material UI and React. Converted React project template to use Next.js with authentication via Graph API and Azure.",
+    "technologies": ["Azure DevOps", "Next.js", "React", "SQL", "C#/.NET"]
   }
 ]
