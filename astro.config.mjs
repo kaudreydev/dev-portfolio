@@ -1,5 +1,7 @@
 import { defineConfig } from "astro/config";
 
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineConfig({
   server: {
     headers: {
@@ -15,5 +17,10 @@ export default defineConfig({
       "X-Frame-Options": "DENY",
     },
   },
+
   site: "https://astro-naut.statichost.eu/",
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
