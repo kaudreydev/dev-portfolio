@@ -61,3 +61,12 @@ export const projectSchema = z.object({
 });
 
 export type Project = z.infer<typeof projectSchema>;
+
+export const contactSchema = z.object({
+  id: z.string(),
+  type: z.enum(["Codeberg", "GitHub", "LinkedIn", "Mastodon"]),
+  href: z.string(),
+  title: z.string(),
+});
+
+export type Contact = z.infer<typeof contactSchema>;

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "contact-1",
+    "type": "LinkedIn",
+    "href": "https://www.linkedin.com/in/kathryn-audrey/",
+    "title": "Kathryn Audrey on LinkedIn"
+  },
+  {
+    "id": "contact-2",
+    "type": "GitHub",
+    "href": "https://github.com/kaudreydev",
+    "title": "Kathryn Audrey on GitHub"
+  },
+  {
+    "id": "contact-3",
+    "type": "Codeberg",
+    "href": "https://codeberg.org/KAudreyDev",
+    "title": "Kathryn Audrey on Codeberg"
+  },
+  {
+    "id": "contact-4",
+    "type": "Mastodon",
+    "href": "https://tech.lgbt/@kaudreydev",
+    "title": "Kathryn Audrey on Mastodon"
+  }
+]
