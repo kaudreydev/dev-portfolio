@@ -1,0 +1,31 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import type { Skill } from "~/types";
+
+const skillsCollection = await getCollection("skills");
+const allSkills = skillsCollection.map(
+  (entry: CollectionEntry<"skills">) => entry.data as Skill,
+);
+---
+
+<section>
+  <h2 id="skills">Skills</h2>
+  <table>
+    <thead>
+      <th>Skill</th>
+      <th>Proficiency</th>
+      <th>Years of Experience</th>
+    </thead>
+    <tbody>
+      {
+        allSkills.map((skill: Skill) => (
+          <tr>
+            <td>{skill.name}</td>
+            <td>{skill.level}</td>
+            <td>{skill.years}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</section>

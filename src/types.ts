@@ -70,3 +70,13 @@ export const contactSchema = z.object({
 });
 
 export type Contact = z.infer<typeof contactSchema>;
+
+export const skillSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  icon: z.string(),
+  level: z.enum(["beginner", "intermediate", "advanced"]),
+  years: z.number(),
+});
+
+export type Skill = z.infer<typeof skillSchema>;

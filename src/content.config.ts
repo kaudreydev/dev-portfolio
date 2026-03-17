@@ -1,6 +1,11 @@
 import { file } from "astro/loaders";
 import { defineCollection } from "astro:content";
-import { contactSchema, projectSchema, referenceSchema } from "~/types";
+import {
+  contactSchema,
+  projectSchema,
+  referenceSchema,
+  skillSchema,
+} from "~/types";
 
 const experience = defineCollection({
   loader: file("src/content/experience.json"),
@@ -17,4 +22,9 @@ const contact = defineCollection({
   schema: contactSchema,
 });
 
-export const collections = { experience, projects, contact };
+const skills = defineCollection({
+  loader: file("src/content/skills.json"),
+  schema: skillSchema,
+});
+
+export const collections = { experience, projects, contact, skills };
