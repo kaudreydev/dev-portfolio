@@ -1,4 +1,10 @@
 ---
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@components/ui/card";
 import { type CollectionEntry, getCollection } from "astro:content";
 import type { Skill } from "~/types";
 
@@ -6,26 +12,30 @@ const skillsCollection = await getCollection("skills");
 const allSkills = skillsCollection.map(
   (entry: CollectionEntry<"skills">) => entry.data as Skill,
 );
+
+const iconPath = "https://unpkg.com/simple-icons@v16/icons/{icon}.svg";
+const iconSize = 32;
 ---
 
 <section>
   <h2 id="skills">Skills</h2>
-  <table>
-    <thead>
-      <th>Skill</th>
-      <th>Proficiency</th>
-      <th>Years of Experience</th>
-    </thead>
-    <tbody>
-      {
-        allSkills.map((skill: Skill) => (
-          <tr>
-            <td>{skill.name}</td>
-            <td>{skill.level}</td>
-            <td>{skill.years}</td>
-          </tr>
-        ))
-      }
-    </tbody>
-  </table>
+  <div class="flex flex-wrap gap-4 max-w-5xl">
+    {
+      allSkills.map((skill: Skill) => (
+        <Card className={`w-full max-w-${iconSize}`}>
+          <img
+            class={`object-center`}
+            alt={`${skill.name} icon`}
+            src={iconPath.replace("{icon}", skill.icon.toLowerCase())}
+          />
+          <CardHeader>
+            <CardTitle>{skill.name}</CardTitle>
+            <CardDescription>
+              {skill.level} - {skill.years} years
+            </CardDescription>
+          </CardHeader>
+        </Card>
+      ))
+    }
+  </div>
 </section>
