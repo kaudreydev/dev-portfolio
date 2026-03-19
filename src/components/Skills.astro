@@ -14,7 +14,7 @@ const allSkills = skillsCollection.map(
 );
 
 const iconPath = "https://unpkg.com/simple-icons@v16/icons/{icon}.svg";
-const iconSize = 32;
+const iconSize = 128;
 ---
 
 <section>
@@ -22,16 +22,20 @@ const iconSize = 32;
   <div class="flex flex-wrap gap-4 max-w-5xl">
     {
       allSkills.map((skill: Skill) => (
-        <Card className={`w-full max-w-${iconSize}`}>
+        <Card className={`max-w-${iconSize}`}>
           <img
-            class={`object-center`}
+            class={`dark:invert filter-blue object-center m-4`}
+            height={iconSize}
+            width={iconSize}
             alt={`${skill.name} icon`}
             src={iconPath.replace("{icon}", skill.icon.toLowerCase())}
           />
           <CardHeader>
             <CardTitle>{skill.name}</CardTitle>
             <CardDescription>
-              {skill.level} - {skill.years} years
+              {skill.level}
+              <br />
+              {skill.years} years
             </CardDescription>
           </CardHeader>
         </Card>
@@ -39,3 +43,10 @@ const iconSize = 32;
     }
   </div>
 </section>
+
+<style>
+  .filter-blue {
+    filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(1879%)
+      hue-rotate(150deg) brightness(103%) contrast(107%);
+  }
+</style>
