@@ -7,6 +7,7 @@ import {
 } from "@components/ui/card";
 import { type CollectionEntry, getCollection } from "astro:content";
 import type { Skill } from "~/types";
+import ProficiencyRating from "./utils/ProficiencyRating.astro";
 
 const skillsCollection = await getCollection("skills");
 const allSkills = skillsCollection.map(
@@ -33,7 +34,7 @@ const iconSize = 128;
           <CardHeader>
             <CardTitle>{skill.name}</CardTitle>
             <CardDescription>
-              {skill.level}
+              <ProficiencyRating proficiencyLevel={skill.level} />
               <br />
               {skill.years} years
             </CardDescription>

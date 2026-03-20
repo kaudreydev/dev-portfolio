@@ -75,7 +75,7 @@ export const skillSchema = z.object({
   id: z.string(),
   name: z.string(),
   icon: z.string(),
-  level: z.enum(["beginner", "intermediate", "advanced"]),
+  level: z.number(),
   years: z.string(),
 });
 
