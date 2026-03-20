@@ -22,9 +22,9 @@ const iconSize = 128;
   <div class="flex flex-wrap gap-4 max-w-5xl">
     {
       allSkills.map((skill: Skill) => (
-        <Card className={`max-w-${iconSize}`}>
+        <Card className={`bg-cyan-50 dark:bg-slate-700 max-w-${iconSize}`}>
           <img
-            class={`dark:invert filter-blue object-center m-4`}
+            class={`filter-pink object-center m-4`}
             height={iconSize}
             width={iconSize}
             alt={`${skill.name} icon`}
@@ -43,10 +43,3 @@ const iconSize = 128;
     }
   </div>
 </section>
-
-<style>
-  .filter-blue {
-    filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(1879%)
-      hue-rotate(150deg) brightness(103%) contrast(107%);
-  }
-</style>

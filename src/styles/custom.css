@@ -2,4 +2,20 @@
 
 @layer custom {
   /* Your custom styles go here. Never using !important again 🤗 */
+  .filter-blue {
+    filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(1879%)
+      hue-rotate(150deg) brightness(103%) contrast(107%);
+  }
+  .filter-pink {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(5375%)
+      hue-rotate(275deg) brightness(90%) contrast(90%);
+  }
+  .filter-light-pink {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(55%) saturate(3949%)
+      hue-rotate(278deg) brightness(105%) contrast(109%);
+  }
+  .filter-very-pink {
+    filter: brightness(0) saturate(100%) invert(72%) sepia(76%) saturate(4250%)
+      hue-rotate(279deg) brightness(100%) contrast(102%);
+  }
 }
