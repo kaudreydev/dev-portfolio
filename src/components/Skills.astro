@@ -34,9 +34,23 @@ const iconSize = 128;
           <CardHeader>
             <CardTitle>{skill.name}</CardTitle>
             <CardDescription>
-              <ProficiencyRating proficiencyLevel={skill.level} />
-              <br />
-              {skill.years} years
+              <div class="grid grid-flow-col">
+                <div class="justify-items-center">
+                  <ProficiencyRating proficiencyLevel={skill.level} />
+                  <br />
+                  <div class="text-sm/normal text-center">
+                    {(skill.level === 0 && "Familiar") ||
+                      (skill.level === 1 && "Growing") ||
+                      (skill.level === 2 && "Proficient") ||
+                      (skill.level === 3 && "Expert")}
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-years text-center">{skill.years}</div>
+                  <br />
+                  <div class="text-sm/normal text-center">Years</div>
+                </div>
+              </div>
             </CardDescription>
           </CardHeader>
         </Card>
@@ -44,3 +58,12 @@ const iconSize = 128;
     }
   </div>
 </section>
+
+<style>
+  .skill-years {
+    color: var(--color-pink);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 64px;
+  }
+</style>

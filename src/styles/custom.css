@@ -2,6 +2,15 @@
 
 @layer custom {
   /* Your custom styles go here. Never using !important again 🤗 */
+  .gradient-bg {
+    background: #eb6bd3;
+    background: linear-gradient(
+      90deg,
+      rgba(235, 107, 211, 1) 0%,
+      rgba(124, 126, 230, 1) 50%,
+      rgba(121, 232, 223, 1) 100%
+    );
+  }
   .filter-blue {
     filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(1879%)
       hue-rotate(150deg) brightness(103%) contrast(107%);
@@ -11,6 +20,7 @@
       hue-rotate(349deg) brightness(99%) contrast(93%);
   }
   .filter-pink {
+    /* #EB6BD3 */
     filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(5375%)
       hue-rotate(275deg) brightness(90%) contrast(90%);
   }
