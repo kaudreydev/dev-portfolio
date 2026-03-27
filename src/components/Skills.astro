@@ -1,69 +1,15 @@
 ---
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@components/ui/card";
 import { type CollectionEntry, getCollection } from "astro:content";
 import type { Skill } from "~/types";
-import ProficiencyRating from "./utils/ProficiencyRating.astro";
+import SkillCards from "./utils/SkillCards";
 
 const skillsCollection = await getCollection("skills");
 const allSkills = skillsCollection.map(
   (entry: CollectionEntry<"skills">) => entry.data as Skill,
 );
-
-const iconPath = "https://unpkg.com/simple-icons@v16/icons/{icon}.svg";
-const iconSize = 128;
 ---
 
 <section>
   <h2 id="skills">Skills</h2>
-  <div class="flex flex-wrap gap-4 max-w-5xl">
-    {
-      allSkills.map((skill: Skill) => (
-        <Card className={`bg-cyan-50 dark:bg-slate-700 max-w-${iconSize}`}>
-          <img
-            class={`filter-pink object-center m-4`}
-            height={iconSize}
-            width={iconSize}
-            alt={`${skill.name} icon`}
-            src={iconPath.replace("{icon}", skill.icon.toLowerCase())}
-          />
-          <CardHeader>
-            <CardTitle>{skill.name}</CardTitle>
-            <CardDescription>
-              <div class="grid grid-flow-col">
-                <div class="justify-items-center">
-                  <ProficiencyRating proficiencyLevel={skill.level} />
-                  <br />
-                  <div class="text-sm/normal text-center">
-                    {(skill.level === 0 && "Familiar") ||
-                      (skill.level === 1 && "Growing") ||
-                      (skill.level === 2 && "Proficient") ||
-                      (skill.level === 3 && "Expert")}
-                  </div>
-                </div>
-                <div>
-                  <div class="skill-years text-center">{skill.years}</div>
-                  <br />
-                  <div class="text-sm/normal text-center">Years</div>
-                </div>
-              </div>
-            </CardDescription>
-          </CardHeader>
-        </Card>
-      ))
-    }
-  </div>
+  <SkillCards skills={allSkills} client:load />
 </section>
-
-<style>
-  .skill-years {
-    color: var(--color-pink);
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 64px;
-  }
-</style>

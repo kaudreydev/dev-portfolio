@@ -32,4 +32,14 @@
     filter: brightness(0) saturate(100%) invert(72%) sepia(76%) saturate(4250%)
       hue-rotate(279deg) brightness(100%) contrast(102%);
   }
+  .proficiency-level {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(5375%)
+      hue-rotate(275deg) brightness(90%) contrast(90%);
+  }
+  .skill-years {
+    color: var(--color-pink);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 64px;
+  }
 }
