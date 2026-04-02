@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import type { Skill } from "~/types";
 import ProficiencyRating from "./ProficiencyRating";
 import SkillSort from "./SkillSort";
-import * as lodash from "lodash";
+import lodash from "lodash";
 
 const { sortBy } = lodash;
 
