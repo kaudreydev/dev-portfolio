@@ -1,5 +1,6 @@
 ---
 import I18NDebug from "@ariaskit/astro-i18n/I18NDebug.astro";
+import DarkModeSwitcher from "./utils/DarkModeSwitcher.tsx";
 
 interface Props {
   nav: { path: string; text: string }[];
@@ -24,6 +25,7 @@ const { nav } = Astro.props as Props;
         </I18NDebug>
       ))
     }
+    <DarkModeSwitcher client:only />
   </div>
   <div
     class="absolute -bottom-10 left-0 w-full h-18 pointer-events-none bg-linear-to-b from-background via-background/80 to-background/20 z-10"

@@ -3,7 +3,77 @@
     "id": "skill-1",
     "name": "JavaScript",
     "icon": "javascript",
-    "level": "advanced",
-    "years": 15
+    "level": 3,
+    "years": "15+"
+  },
+  {
+    "id": "skill-2",
+    "name": "TypeScript",
+    "icon": "typescript",
+    "level": 3,
+    "years": "10+"
+  },
+  {
+    "id": "skill-3",
+    "name": "React",
+    "icon": "react",
+    "level": 2,
+    "years": "5+"
+  },
+  {
+    "id": "skill-4",
+    "name": "Node.js",
+    "icon": "nodedotjs",
+    "level": 3,
+    "years": "10+"
+  },
+  {
+    "id": "skill-5",
+    "name": "Astro",
+    "icon": "astro",
+    "level": 1,
+    "years": "<1"
+  },
+  {
+    "id": "skill-6",
+    "name": "CSS",
+    "icon": "css",
+    "level": 3,
+    "years": "15+"
+  },
+  {
+    "id": "skill-7",
+    "name": "HTML",
+    "icon": "html5",
+    "level": 3,
+    "years": "15+"
+  },
+  {
+    "id": "skill-8",
+    "name": "Git",
+    "icon": "git",
+    "level": 3,
+    "years": "10+"
+  },
+  {
+    "id": "skill-9",
+    "name": "Docker",
+    "icon": "docker",
+    "level": 2,
+    "years": "3+"
+  },
+  {
+    "id": "skill-10",
+    "name": "Angular",
+    "icon": "angular",
+    "level": 2,
+    "years": "6+"
+  },
+  {
+    "id": "skill-11",
+    "name": "Next.js",
+    "icon": "nextdotjs",
+    "level": 2,
+    "years": "4+"
   }
 ]

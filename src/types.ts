@@ -75,8 +75,8 @@ export const skillSchema = z.object({
   id: z.string(),
   name: z.string(),
   icon: z.string(),
-  level: z.enum(["beginner", "intermediate", "advanced"]),
-  years: z.number(),
+  level: z.number(),
+  years: z.string(),
 });
 
 export type Skill = z.infer<typeof skillSchema>;

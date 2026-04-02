@@ -2,8 +2,8 @@ import { clsx, type ClassValue } from "clsx";
 import { parse } from "node-html-parser";
 import { twMerge } from "tailwind-merge";
 
-export function cls(...args: ClassValue[]) {
-  return twMerge(clsx(args));
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }
 
 export function getSVG(name: string) {

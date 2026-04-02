@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import type { Skill } from "~/types";
+import SkillCards from "./utils/SkillCards";
 
 const skillsCollection = await getCollection("skills");
 const allSkills = skillsCollection.map(
@@ -10,22 +11,5 @@ const allSkills = skillsCollection.map(
 
 <section>
   <h2 id="skills">Skills</h2>
-  <table>
-    <thead>
-      <th>Skill</th>
-      <th>Proficiency</th>
-      <th>Years of Experience</th>
-    </thead>
-    <tbody>
-      {
-        allSkills.map((skill: Skill) => (
-          <tr>
-            <td>{skill.name}</td>
-            <td>{skill.level}</td>
-            <td>{skill.years}</td>
-          </tr>
-        ))
-      }
-    </tbody>
-  </table>
+  <SkillCards skills={allSkills} client:load />
 </section>
