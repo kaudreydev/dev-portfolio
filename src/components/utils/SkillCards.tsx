@@ -38,12 +38,12 @@ export default function SkillCards({ skills }: { skills: Skill[] }) {
   }, [sortValue]);
 
   return (
-    <div>
-      <div>
-        Sort:&nbsp;
+    <div className="flex flex-col gap-4 justify-center">
+      <div className="flex flex-row gap-2 leading-8">
+        <div>Sort by:</div>
         <SkillSort sortValue={sortValue} onValueChange={setSortValue} />
       </div>
-      <div className="flex flex-wrap gap-4 max-w-5xl">
+      <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 gap-4">
         {sortedSkills.map((skill: Skill) => (
           <Card
             key={skill.id}
