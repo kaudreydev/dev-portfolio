@@ -1,7 +1,4 @@
-import base from "@/i18n/en.json";
 import z from "astro/zod";
-
-export type LocaleSchema = typeof base;
 
 export type ImageMetadata = {
   url: URL;

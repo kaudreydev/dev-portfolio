@@ -1,5 +1,4 @@
 ---
-import I18NDebug from "@ariaskit/astro-i18n/I18NDebug.astro";
 import DarkModeSwitcher from "./utils/DarkModeSwitcher.tsx";
 
 interface Props {
@@ -15,14 +14,12 @@ const { nav } = Astro.props as Props;
   <div class="flex items-center gap-5 order-2 md:order-1">
     {
       nav.map((item) => (
-        <I18NDebug key={item.text}>
-          <a
-            class="opacity-50 transition-all duration-200 hover:opacity-100 text-[1rem] md:text-[0.85rem]"
-            href={`/${item.path}`}
-          >
-            {item.text}
-          </a>
-        </I18NDebug>
+        <a
+          class="opacity-50 transition-all duration-200 hover:opacity-100 text-[1rem] md:text-[0.85rem]"
+          href={`/${item.path}`}
+        >
+          {item.text}
+        </a>
       ))
     }
     <DarkModeSwitcher client:only />
