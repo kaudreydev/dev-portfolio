@@ -2,6 +2,7 @@
 
 "use client";
 
+import { Moon, Sun } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 export default function DarkModeSwitcher() {
@@ -40,20 +41,13 @@ export default function DarkModeSwitcher() {
   }, [isDarkMode]);
 
   return (
-    <div
+    <button
       id="dark-mode-switcher"
       onClick={toggleDarkMode}
-      className="relative w-14 h-8 rounded-3xl bg-slate-300 dark:bg-zinc-700 place--center cursor-pointer"
+      className="cursor-pointer opacity-50 transition-all duration-200 hover:opacity-100"
+      title={`switch to ${isDarkMode ? "light" : "dark"} mode`}
     >
-      <div
-        className={`absolute top-1 rounded-full w-6 h-6 bg-blue-500 ${isDarkMode ? "left-1" : "right-1"}`}
-      >
-        {/* <img
-          height="32px"
-          width="32px"
-          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWVjbGlwc2UtaWNvbiBsdWNpZGUtZWNsaXBzZSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgMmE3IDcgMCAxIDAgMTAgMTAiLz48L3N2Zz4="
-        /> */}
-      </div>
-    </div>
+      {isDarkMode ? <Moon /> : <Sun />}
+    </button>
   );
 }
