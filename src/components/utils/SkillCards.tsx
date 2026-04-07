@@ -47,15 +47,15 @@ export default function SkillCards({ skills }: { skills: Skill[] }) {
 
   return (
     <div className="flex flex-col gap-4 justify-center">
-      <div className="flex flex-row gap-2 leading-8">
+      <div className="flex flex-row gap-2 leading-8 pt-6 pb-1">
         <div>Sort by:</div>
         <SkillSort sortValue={sortValue} onValueChange={setSortValue} />
       </div>
-      <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 gap-4">
+      <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 gap-4 mx-auto">
         {sortedSkills.map((skill: Skill) => (
           <Card
             key={skill.id}
-            className={`bg-cyan-50 dark:bg-slate-700 max-w-${iconSize}`}
+            className={`bg-cyan-50 dark:bg-slate-700 max-w-[${iconSize + 32}px]`}
           >
             <img
               className={`filter-pink object-center m-4`}
