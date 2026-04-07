@@ -1,14 +1,13 @@
 ---
 import About from "@components/About.astro";
+import Contact from "@components/Contact.astro";
 import Experience from "@components/Experience.astro";
 import Header from "@components/Header.astro";
-import Layout from "@layouts/Layout.astro";
-import BackToTop from "@utils/BackToTop.astro";
-import SkipLink from "@utils/SkipLink.astro";
-import Contact from "@components/Contact.astro";
 import Projects from "@components/Projects.astro";
 import Skills from "@components/Skills.astro";
-import { title, description } from "@content/site.json";
+import { description, title } from "@content/site.json";
+import Layout from "@layouts/Layout.astro";
+import BackToTop from "@utils/BackToTop.astro";
 
 const nav = [
   { path: `#about`, text: "about" },
@@ -20,10 +19,9 @@ const nav = [
 ---
 
 <Layout title={title} description={description}>
-  <SkipLink />
-  <div class="sr-only" id="start"></div>
   <Header nav={nav} />
   <main class="justify-items-center lg:w-6xl md:w-4xl mx-auto">
+    <div class="sr-only" id="start"></div>
     <About />
     <Skills />
     <Experience />
