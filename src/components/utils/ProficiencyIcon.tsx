@@ -6,11 +6,13 @@ export enum ProficiencyLevel {
 }
 
 export default function ProficiencyIcon({
-  alt,
   level,
+  alt,
+  className,
 }: {
-  alt?: string;
   level: ProficiencyLevel;
+  alt?: string;
+  className?: string;
 }) {
   if (ProficiencyLevel.Familiar === level) {
     return (
@@ -24,7 +26,7 @@ export default function ProficiencyIcon({
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className="lucide lucide-signal-low-icon lucide-signal-low"
+        className={`lucide lucide-signal-low-icon lucide-signal-low ${className}`}
       >
         <title>{alt}</title>
         <path d="M2 20h.01" />
@@ -45,7 +47,7 @@ export default function ProficiencyIcon({
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className="lucide lucide-signal-medium-icon lucide-signal-medium"
+        className={`lucide lucide-signal-medium-icon lucide-signal-medium ${className}`}
       >
         <title>{alt}</title>
         <path d="M2 20h.01" />
@@ -67,7 +69,7 @@ export default function ProficiencyIcon({
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className="lucide lucide-signal-high-icon lucide-signal-high"
+        className={`lucide lucide-signal-high-icon lucide-signal-high ${className}`}
       >
         <title>{alt}</title>
         <path d="M2 20h.01" />
@@ -90,7 +92,7 @@ export default function ProficiencyIcon({
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className="lucide lucide-signal-icon lucide-signal"
+        className={`lucide lucide-signal-icon lucide-signal ${className}`}
       >
         <title>{alt}</title>
         <path d="M2 20h.01" />

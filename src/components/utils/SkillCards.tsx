@@ -15,6 +15,11 @@ const { sortBy } = lodash;
 const iconPath = "https://unpkg.com/simple-icons@v16/icons/{icon}.svg";
 const iconSize = 128;
 
+function parseYears(experience: string): number {
+  const extractedYears = /([0-9]+)/.exec(experience)?.pop();
+  return extractedYears ? parseInt(extractedYears, 0) : NaN;
+}
+
 export default function SkillCards({ skills }: { skills: Skill[] }) {
   const [sortedSkills, setSortedSkills] = useState<Skill[]>(skills);
   const [sortValue, setSortValue] = useState<string>("level");
@@ -24,12 +29,15 @@ export default function SkillCards({ skills }: { skills: Skill[] }) {
 
     if ("abc" === sortValue) {
       nextSortedSkills = sortBy(sortedSkills, ["name"]);
-    } else if ("experience" === sortValue) {
-      nextSortedSkills = sortBy(sortedSkills, ["years"]);
+    } else if ("years" === sortValue) {
+      nextSortedSkills = sortBy(sortedSkills, [
+        (skill: Skill) => parseYears(skill.years),
+        "name",
+      ]).reverse();
     } else if ("level" === sortValue) {
       nextSortedSkills = sortBy(sortedSkills, [
         "level",
-        "years",
+        (skill: Skill) => parseYears(skill.years),
         "name",
       ]).reverse();
     }

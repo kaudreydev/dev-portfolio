@@ -10,6 +10,7 @@ import {
 
 const sortOptions = [
   { label: "Alphabetical", value: "abc" },
+  { label: "Experience", value: "years" },
   { label: "Proficiency", value: "level" },
 ];
 
