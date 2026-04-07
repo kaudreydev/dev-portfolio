@@ -44,7 +44,7 @@ export default function DarkModeSwitcher() {
     <button
       id="dark-mode-switcher"
       onClick={toggleDarkMode}
-      className="cursor-pointer opacity-50 transition-all duration-200 hover:opacity-100 text-[2rem] md:text-[1.8rem] bg-transparent border-none"
+      className="cursor-pointer opacity-50 transition-all duration-200 hover:opacity-100 text-[2rem] md:text-[1.8rem] bg-transparent border-0 leading-7"
       title={`switch to ${isDarkMode ? "light" : "dark"} mode`}
     >
       {isDarkMode ? <Moon /> : <Sun />}
