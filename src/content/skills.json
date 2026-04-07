@@ -17,21 +17,21 @@
     "id": "skill-3",
     "name": "React",
     "icon": "react",
-    "level": 2,
+    "level": 3,
     "years": "5+"
   },
   {
     "id": "skill-4",
     "name": "Node.js",
     "icon": "nodedotjs",
-    "level": 3,
+    "level": 2,
     "years": "10+"
   },
   {
     "id": "skill-5",
     "name": "Astro",
     "icon": "astro",
-    "level": 1,
+    "level": 0,
     "years": "<1"
   },
   {
@@ -52,14 +52,14 @@
     "id": "skill-8",
     "name": "Git",
     "icon": "git",
-    "level": 3,
+    "level": 2,
     "years": "10+"
   },
   {
     "id": "skill-9",
     "name": "Docker",
     "icon": "docker",
-    "level": 2,
+    "level": 1,
     "years": "3+"
   },
   {
@@ -75,5 +75,12 @@
     "icon": "nextdotjs",
     "level": 2,
     "years": "4+"
+  },
+  {
+    "id": "skill-12",
+    "name": ".NET",
+    "icon": "dotnet",
+    "level": 1,
+    "years": "3+"
   }
 ]
