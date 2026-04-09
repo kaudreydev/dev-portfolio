@@ -4,10 +4,11 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
+import { userTheme } from "~/store";
 
 export default function DarkModeSwitcher() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    const savedTheme = window.localStorage.getItem("theme");
+    const savedTheme = userTheme.get();
     if (savedTheme) {
       return savedTheme === "dark";
     }
@@ -21,10 +22,10 @@ export default function DarkModeSwitcher() {
       const html = document.documentElement;
       if (newMode) {
         html.classList.add("dark");
-        window.localStorage.setItem("theme", "dark");
+        userTheme.set("dark");
       } else {
         html.classList.remove("dark");
-        localStorage.setItem("theme", "light");
+        userTheme.set("light");
       }
       return newMode;
     });
@@ -44,7 +45,7 @@ export default function DarkModeSwitcher() {
     <button
       id="dark-mode-switcher"
       onClick={toggleDarkMode}
-      className="cursor-pointer opacity-50 transition-all duration-200 hover:opacity-100 text-[2rem] md:text-[1.8rem] bg-transparent border-0 leading-7"
+      className="cursor-pointer text-[2rem] md:text-[1.8rem] bg-transparent border-0 leading-6 pt-1"
       title={`switch to ${isDarkMode ? "light" : "dark"} mode`}
     >
       {isDarkMode ? <Moon /> : <Sun />}

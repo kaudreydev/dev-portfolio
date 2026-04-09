@@ -4,11 +4,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@components/ui/Card";
+import { useStore } from "@nanostores/react";
+import lodash from "lodash";
 import { useEffect, useState } from "react";
+import { userTheme } from "~/store";
 import type { Skill } from "~/types";
 import ProficiencyRating from "./ProficiencyRating";
 import SkillSort from "./SkillSort";
-import lodash from "lodash";
 
 const { sortBy } = lodash;
 
@@ -21,8 +23,13 @@ function parseYears(experience: string): number {
 }
 
 export default function SkillCards({ skills }: { skills: Skill[] }) {
+  const $userTheme = useStore(userTheme);
+
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [sortedSkills, setSortedSkills] = useState<Skill[]>(skills);
   const [sortValue, setSortValue] = useState<string>("level");
+
+  useEffect(() => setIsDarkMode($userTheme === "dark"), [$userTheme]);
 
   useEffect(() => {
     let nextSortedSkills;
@@ -58,7 +65,7 @@ export default function SkillCards({ skills }: { skills: Skill[] }) {
             className={`bg-cyan-50 dark:bg-slate-700 max-w-[${iconSize + 32}px]`}
           >
             <img
-              className={`filter-pink object-center m-4`}
+              className={`${isDarkMode ? "filter-pink" : "filter-pink-dark"} object-center m-4`}
               height={iconSize}
               width={iconSize}
               alt={`${skill.name} icon`}
@@ -71,7 +78,7 @@ export default function SkillCards({ skills }: { skills: Skill[] }) {
                   <div className="justify-items-center">
                     <ProficiencyRating proficiencyLevel={skill.level} />
                     <br />
-                    <div className="text-sm/normal text-center">
+                    <div className="text-center">
                       {(skill.level === 0 && "Familiar") ||
                         (skill.level === 1 && "Growing") ||
                         (skill.level === 2 && "Proficient") ||
@@ -81,7 +88,7 @@ export default function SkillCards({ skills }: { skills: Skill[] }) {
                   <div>
                     <div className="skill-years text-center">{skill.years}</div>
                     <br />
-                    <div className="text-sm/normal text-center">Years</div>
+                    <div className="text-center">Years</div>
                   </div>
                 </div>
               </CardDescription>
