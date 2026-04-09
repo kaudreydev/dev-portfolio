@@ -66,7 +66,6 @@
 
   h1,
   h2 {
-    color: light-dark(var(--color-black), var(--color-white));
     font-family: "Anybody", sans-serif;
   }
 
@@ -85,6 +84,14 @@
     font-family: "Inter", sans-serif;
     font-size: var(--step-1);
     hyphens: auto;
+  }
+
+  a:visited {
+    color: var(--anchor-visited);
+  }
+
+  button {
+    color: var(--color-foreground);
   }
 
   code {
@@ -134,7 +141,8 @@
 
 :root {
   --background: oklch(95.6% 0.045 203.388);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.3903 0.0095 61.23);
+  --anchor-visited: oklch(0.46 0.2148 301.3);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(98.4% 0.019 200.873);
@@ -144,12 +152,12 @@
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.3903 0.0095 61.23);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --border: oklch(0.3903 0.0095 61.23);
+  --input: oklch(0.3903 0.0095 61.23);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
@@ -169,7 +177,8 @@
 
 .dark {
   --background: oklch(27.9% 0.041 260.031);
-  --foreground: oklch(0.985 0 0);
+  --foreground: oklch(0.8761 0 0);
+  --anchor-visited: oklch(0.7802 0.112 307.74);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(37.2% 0.044 257.287);
@@ -179,7 +188,7 @@
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+  --muted-foreground: oklch(0.8761 0 0);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);

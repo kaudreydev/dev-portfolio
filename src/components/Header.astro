@@ -1,5 +1,5 @@
 ---
-import DarkModeSwitcher from "./utils/DarkModeSwitcher.tsx";
+import DarkModeSwitcher from "@components/utils/DarkModeSwitcher.tsx";
 
 interface Props {
   nav: { path: string; text: string }[];
@@ -14,10 +14,7 @@ const { nav } = Astro.props as Props;
   <div class="flex items-center gap-5 order-2 md:order-1">
     {
       nav.map((item) => (
-        <a
-          class="opacity-50 transition-all duration-200 hover:opacity-100 text-[2rem] md:text-[1.2rem]"
-          href={`/${item.path}`}
-        >
+        <a class="text-[2rem] md:text-[1.2rem]" href={`/${item.path}`}>
           {item.text}
         </a>
       ))
