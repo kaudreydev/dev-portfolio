@@ -1,5 +1,7 @@
 import z from "astro/zod";
 
+/** Object Types */
+
 export type ImageMetadata = {
   url: URL;
   type: string;
@@ -7,16 +9,7 @@ export type ImageMetadata = {
   height: string;
 };
 
-export const referenceSchema = z.object({
-  id: z.string(),
-  company: z.string(),
-  title: z.string(),
-  startDate: z.string(),
-  endDate: z.string(),
-  description: z.string(),
-});
-
-export type Reference = z.infer<typeof referenceSchema>;
+/** Enums */
 
 export const technologySchema = z.enum([
   "Accessibility",
@@ -47,6 +40,17 @@ export const technologySchema = z.enum([
 
 export type Technology = z.infer<typeof technologySchema>;
 
+/** Collection Types */
+
+export const contactSchema = z.object({
+  id: z.string(),
+  type: z.enum(["Codeberg", "GitHub", "LinkedIn", "Mastodon"]),
+  href: z.string(),
+  title: z.string(),
+});
+
+export type Contact = z.infer<typeof contactSchema>;
+
 export const projectSchema = z.object({
   id: z.string(),
   company: z.string(),
@@ -59,14 +63,16 @@ export const projectSchema = z.object({
 
 export type Project = z.infer<typeof projectSchema>;
 
-export const contactSchema = z.object({
+export const referenceSchema = z.object({
   id: z.string(),
-  type: z.enum(["Codeberg", "GitHub", "LinkedIn", "Mastodon"]),
-  href: z.string(),
+  company: z.string(),
   title: z.string(),
+  startDate: z.string(),
+  endDate: z.string(),
+  details: z.array(z.string()),
 });
 
-export type Contact = z.infer<typeof contactSchema>;
+export type Reference = z.infer<typeof referenceSchema>;
 
 export const skillSchema = z.object({
   id: z.string(),

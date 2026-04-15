@@ -12,17 +12,21 @@ const allJobs = experienceCollection
 
 <section>
   <h2 id="experience">Experience</h2>
-  <ul>
+  <ul class="list-none">
     {
       allJobs.map((job: Reference) => (
-        <li>
-          <div>
-            {job.title} - {job.company}
-          </div>
-          <div>
-            {job.startDate} - {job.endDate}
-          </div>
-          <div>{job.description}</div>
+        <li class="py-2">
+          <span>
+            <b>
+              {job.title} - {job.company}
+            </b>{" "}
+            ({job.startDate}-{job.endDate})
+          </span>
+          <ul class="py-2">
+            {job.details.map((detail: string) => (
+              <li class="text-lg py-1">{detail}</li>
+            ))}
+          </ul>
         </li>
       ))
     }
