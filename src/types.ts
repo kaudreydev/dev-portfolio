@@ -55,9 +55,8 @@ export const projectSchema = z.object({
   id: z.string(),
   company: z.string(),
   name: z.string(),
-  startDate: z.string(),
-  endDate: z.string(),
-  description: z.string(),
+  years: z.string(),
+  details: z.array(z.string()),
   technologies: z.array(technologySchema),
 });
 

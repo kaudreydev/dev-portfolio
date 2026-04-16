@@ -1,32 +1,45 @@
 ---
+import { Badge } from "@components/ui/Badge";
 import { type CollectionEntry, getCollection } from "astro:content";
+import lodash from "lodash";
 import type { Project, Technology } from "~/types";
 
+const { chain } = lodash;
+
 const projectsCollection = await getCollection("projects");
-const allProjects = projectsCollection
+const allProjects = chain(projectsCollection)
   .map((entry: CollectionEntry<"projects">) => entry.data as Project)
-  .sort(
-    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
-  );
+  .sortBy("years")
+  .reverse()
+  .value();
 ---
 
 <section>
   <h2 id="projects">Projects</h2>
-  <ul>
+  <ul class="list-none">
     {
       allProjects.map((project: Project) => (
-        <li>
-          <div>
+        <li class="py-2">
+          <b>
             {project.name} - {project.company}
-          </div>
-          <div>
-            {project.startDate} - {project.endDate}
-          </div>
-          <div>{project.description}</div>
-          <div>
-            {project.technologies.map((tech: Technology) => (
-              <span>{tech}</span>
+          </b>
+          <span>({project.years})</span>
+          <ul class="py-2">
+            {project.details.map((detail: string) => (
+              <li class="text-lg py-1">{detail}</li>
             ))}
+          </ul>
+          <div class="flex gap-2 pl-8">
+            {chain(project.technologies)
+              .sort()
+              .map((tech: Technology) => (
+                <Badge
+                  className="bg-green-100 dark:bg-gray-700 dark:border-2 p-3 text-base"
+                  variant="outline"
+                >
+                  {tech}
+                </Badge>
+              ))}
           </div>
         </li>
       ))
