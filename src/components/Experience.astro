@@ -13,19 +13,19 @@ const allJobs = chain(experienceCollection)
   .value();
 ---
 
-<section>
+<section class="w-full">
   <h2 id="experience">Experience</h2>
-  <ul class="list-none">
+  <ul class="list-none pl-4">
     {
       allJobs.map((job: Reference) => (
         <li class="py-2">
           <span>
-            <b>
+            <b class="text-xl md:text-2xl">
               {job.title} - {job.company}
             </b>{" "}
             ({job.years})
           </span>
-          <ul class="py-2">
+          <ul class="py-2 pl-4 md:pl-8">
             {job.details.map((detail: string) => (
               <li class="text-lg py-1">{detail}</li>
             ))}
