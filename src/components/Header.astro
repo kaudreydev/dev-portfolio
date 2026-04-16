@@ -9,12 +9,12 @@ const { nav } = Astro.props as Props;
 ---
 
 <header
-  class="w-full justify-center pt-5 pb-10 flex items-center flex-col md:flex-row fixed top-0 left-1/2 -translate-x-1/2 bg-background z-40"
+  class="w-full justify-center pt-5 pb-5 md:pb-10 flex items-center flex-col fixed top-0 left-1/2 -translate-x-1/2 bg-background z-40"
 >
-  <div class="flex items-center gap-5 order-2 md:order-1">
+  <div class="flex items-center gap-5 order-2">
     {
       nav.map((item) => (
-        <a class="text-[2rem] md:text-[1.2rem]" href={`/${item.path}`}>
+        <a class="text-[0.8rem] md:text-[1.2rem]" href={`/${item.path}`}>
           {item.text}
         </a>
       ))
@@ -22,7 +22,7 @@ const { nav } = Astro.props as Props;
     <DarkModeSwitcher client:only="react" />
   </div>
   <div
-    class="absolute -bottom-10 left-0 w-full h-18 pointer-events-none bg-linear-to-b from-background via-background/80 to-background/20 z-10"
+    class="absolute -bottom-10 left-0 w-full h-10 md:h-18 pointer-events-none bg-linear-to-b from-background via-background/80 to-background/20 z-10"
   >
   </div>
 </header>
