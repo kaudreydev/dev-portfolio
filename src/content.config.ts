@@ -7,6 +7,11 @@ import {
   skillSchema,
 } from "~/types";
 
+const contact = defineCollection({
+  loader: file("src/content/contact.json"),
+  schema: contactSchema,
+});
+
 const experience = defineCollection({
   loader: file("src/content/experience.json"),
   schema: referenceSchema,
@@ -17,14 +22,9 @@ const projects = defineCollection({
   schema: projectSchema,
 });
 
-const contact = defineCollection({
-  loader: file("src/content/contact.json"),
-  schema: contactSchema,
-});
-
 const skills = defineCollection({
   loader: file("src/content/skills.json"),
   schema: skillSchema,
 });
 
-export const collections = { experience, projects, contact, skills };
+export const collections = { contact, experience, projects, skills };

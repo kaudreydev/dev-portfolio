@@ -1,20 +1,9 @@
 ---
-import { useI18n } from "@ariaskit/astro-i18n";
 import Layout from "@layouts/Layout.astro";
-import { type LocaleSchema } from "~/types";
-
-const { t, locale } = useI18n<LocaleSchema>({
-  ssg: {
-    astro: Astro,
-  },
-});
+import { description } from "@content/site.json";
 ---
 
-<Layout
-  locale={locale}
-  title="Page not found - 404"
-  description={t("description")}
->
+<Layout title="Page not found - 404" description={description}>
   <header>
     <h1>Page not found - 404</h1>
     <p>

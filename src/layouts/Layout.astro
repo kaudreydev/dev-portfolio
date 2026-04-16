@@ -22,18 +22,16 @@ const metaData = {
 interface Props {
   title: string;
   description: string;
-  locale: string;
   alternateLinks?: { href: string; hreflang: string }[];
 }
 
-const { title, description, locale, alternateLinks } = Astro.props as Props;
+const { title, description, alternateLinks } = Astro.props as Props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <PageMetadata
-      lang={locale}
       title={title}
       description={description}
       keywords={metaData.keywords}
@@ -52,7 +50,7 @@ const { title, description, locale, alternateLinks } = Astro.props as Props;
       alternateLinks={alternateLinks}
     />
   </head>
-  <body class="dark:bg-slate-800 bg-cyan-100">
+  <body>
     <slot />
   </body>
 </html>

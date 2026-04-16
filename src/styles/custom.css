@@ -24,6 +24,11 @@
     filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(5375%)
       hue-rotate(275deg) brightness(90%) contrast(90%);
   }
+  .filter-pink-dark {
+    /* #980060 */
+    filter: brightness(0) saturate(100%) invert(8%) sepia(86%) saturate(6082%)
+      hue-rotate(311deg) brightness(87%) contrast(105%);
+  }
   .filter-light-pink {
     filter: brightness(0) saturate(100%) invert(90%) sepia(55%) saturate(3949%)
       hue-rotate(278deg) brightness(105%) contrast(109%);
@@ -37,9 +42,12 @@
       hue-rotate(275deg) brightness(90%) contrast(90%);
   }
   .skill-years {
-    color: var(--color-pink);
+    color: var(--color-pink-dark);
     font-size: 2rem;
     font-weight: bold;
     line-height: 64px;
+  }
+  .dark .skill-years {
+    color: var(--color-pink);
   }
 }

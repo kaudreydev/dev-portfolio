@@ -3,16 +3,24 @@
     "id": "job-1",
     "company": "CIBC",
     "title": "Advisory Application Developer",
-    "startDate": "2011-01-01",
-    "endDate": "2017-07-10",
-    "description": "As a member of the SharePoint intranet team, I supported and updated the company's intranet platform and developed tailored solutions for internal business partners that leveraged SharePoint infrastructure and content management features."
+    "years": "2011-2017",
+    "details": [
+      "Supported and developed components and features for the SharePoint-based intranet platform, including regular deployments, updates, and on-call support.",
+      "Designed and built custom SharePoint-based solutions for internal business partners using JavaScript and Angular.js to create tailored frontend UX.",
+      "Worked directly with key stakeholders to gather requirements, manage projects, develop solutions, and maintain products beyond deployment.",
+      "Contributed to the design and strategy around platform upgrades and enhancements."
+    ]
   },
   {
     "id": "job-2",
-    "company": "CGI",
+    "company": "CGI Inc.",
     "title": "Web Developer Consultant",
-    "startDate": "2017-12-20",
-    "endDate": "2025-04-14",
-    "description": "Contributed to the development of large- and small-scale web applications using a variety of technologies for clients in the Canadian government and oil & gas industry."
+    "years": "2017-2025",
+    "details": [
+      "Contributed to numerous small- and large-scale web applications, both independently and as part of a team.",
+      "Developed front-end and full-stack applications using a variety of technologies including Angular, React, Node.js, and .NET.",
+      "Adapted quickly to meet project timelines, including rapid onboarding for in-flight projects and reprioritization due to changing requirements.",
+      "Refined environment setup processes and created detailed documentation to improve onboarding speed."
+    ]
   }
 ]
