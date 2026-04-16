@@ -66,8 +66,7 @@ export const referenceSchema = z.object({
   id: z.string(),
   company: z.string(),
   title: z.string(),
-  startDate: z.string(),
-  endDate: z.string(),
+  years: z.string(),
   details: z.array(z.string()),
 });
 

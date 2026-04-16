@@ -1,13 +1,16 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
+import lodash from "lodash";
 import type { Reference } from "~/types";
 
+const { chain } = lodash;
+
 const experienceCollection = await getCollection("experience");
-const allJobs = experienceCollection
+const allJobs = chain(experienceCollection)
   .map((entry: CollectionEntry<"experience">) => entry.data as Reference)
-  .sort(
-    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
-  );
+  .sortBy("years")
+  .reverse()
+  .value();
 ---
 
 <section>
@@ -20,7 +23,7 @@ const allJobs = experienceCollection
             <b>
               {job.title} - {job.company}
             </b>{" "}
-            ({job.startDate}-{job.endDate})
+            ({job.years})
           </span>
           <ul class="py-2">
             {job.details.map((detail: string) => (

@@ -3,8 +3,7 @@
     "id": "job-1",
     "company": "CIBC",
     "title": "Advisory Application Developer",
-    "startDate": "2011",
-    "endDate": "2017",
+    "years": "2011-2017",
     "details": [
       "Supported and developed components and features for the SharePoint-based intranet platform, including regular deployments, updates, and on-call support.",
       "Designed and built custom SharePoint-based solutions for internal business partners using JavaScript and Angular.js to create tailored frontend UX.",
@@ -16,8 +15,7 @@
     "id": "job-2",
     "company": "CGI Inc.",
     "title": "Web Developer Consultant",
-    "startDate": "2017",
-    "endDate": "2025",
+    "years": "2017-2025",
     "details": [
       "Contributed to numerous small- and large-scale web applications, both independently and as part of a team.",
       "Developed front-end and full-stack applications using a variety of technologies including Angular, React, Node.js, and .NET.",
