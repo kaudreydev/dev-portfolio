@@ -22,8 +22,10 @@ export default function DarkModeSwitcher() {
       const html = document.documentElement;
       if (newMode) {
         html.classList.add("dark");
+        html.classList.remove("light");
         userTheme.set("dark");
       } else {
+        html.classList.add("light");
         html.classList.remove("dark");
         userTheme.set("light");
       }

@@ -8,6 +8,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@utility icon-link {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--space-3xs);
+  width: fit-content;
+}
+
 @utility skill-years {
   color: var(--color-pink-dark);
   font-weight: bold;

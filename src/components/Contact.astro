@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import type { Contact } from "~/types";
-import IconLink from "./utils/IconLink.astro";
+import IconLink from "./utils/IconLink.tsx";
 
 const contact = await getCollection("contact");
 const allContacts = contact.map(
@@ -19,6 +19,7 @@ const allContacts = contact.map(
         allContacts.map((contact: Contact) => (
           <li>
             <IconLink
+              client:only="react"
               href={contact.href}
               type={contact.type}
               title={contact.title}
