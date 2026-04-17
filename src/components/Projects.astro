@@ -18,33 +18,35 @@ const allProjects = chain(projectsCollection)
   <summary id="projects" class="text-4xl py-8"
     ><h2 class="inline text-4xl">Projects</h2></summary
   >
-  <ul class="list-none pl-4">
-    {
-      allProjects.map((project: Project) => (
-        <li class="py-2">
-          <b class="text-xl md:text-2xl">
-            {project.name} - {project.company}
-          </b>
-          <span>({project.years})</span>
-          <ul class="py-2 pl-4 md:pl-8">
-            {project.details.map((detail: string) => (
-              <li class="text-lg py-1">{detail}</li>
-            ))}
-          </ul>
-          <div class="flex flex-wrap gap-2 pl-0 md:pl-8">
-            {chain(project.technologies)
-              .sort()
-              .map((tech: Technology) => (
-                <Badge
-                  className="bg-green-100 dark:bg-gray-700 dark:border-2 p-3 text-base"
-                  variant="outline"
-                >
-                  {tech}
-                </Badge>
+  <div id="projects-content" class="-mt-8">
+    <ul class="list-none pl-4">
+      {
+        allProjects.map((project: Project) => (
+          <li class="py-2">
+            <b class="text-xl md:text-2xl">
+              {project.name} - {project.company}
+            </b>
+            <span>({project.years})</span>
+            <ul class="py-2 pl-4 md:pl-8">
+              {project.details.map((detail: string) => (
+                <li class="text-lg py-1">{detail}</li>
               ))}
-          </div>
-        </li>
-      ))
-    }
-  </ul>
+            </ul>
+            <div class="flex flex-wrap gap-2 pl-0 md:pl-8">
+              {chain(project.technologies)
+                .sort()
+                .map((tech: Technology) => (
+                  <Badge
+                    className="bg-green-100 dark:bg-gray-700 dark:border-2 p-3 text-base"
+                    variant="outline"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </details>
