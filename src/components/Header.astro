@@ -1,8 +1,9 @@
 ---
 import DarkModeSwitcher from "@components/utils/DarkModeSwitcher.tsx";
+import { type NavItem } from "~/types";
 
 interface Props {
-  nav: { path: string; text: string }[];
+  nav: NavItem[];
 }
 
 const { nav } = Astro.props as Props;
@@ -13,8 +14,12 @@ const { nav } = Astro.props as Props;
 >
   <div class="flex items-center gap-5 order-2">
     {
-      nav.map((item) => (
-        <a class="text-[0.8rem] md:text-[1.2rem]" href={`/${item.path}`}>
+      nav.map((item: NavItem, index: number) => (
+        <a
+          class="text-[0.8rem] md:text-[1.2rem]"
+          href={`/${item.path}`}
+          tabindex={index + 1}
+        >
           {item.text}
         </a>
       ))
