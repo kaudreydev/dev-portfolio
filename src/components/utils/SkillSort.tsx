@@ -14,7 +14,7 @@ const sortOptions = [
   { label: "Proficiency", value: "level" },
 ];
 
-export default function SkillCardd({
+export default function SkillSort({
   sortValue,
   onValueChange,
 }: {

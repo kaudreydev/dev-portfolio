@@ -1,3 +1,6 @@
+import { useViewport } from "@uireact/tools";
+import { useEffect, useState } from "react";
+
 export enum ProficiencyLevel {
   Familiar,
   Growing,
@@ -14,11 +17,20 @@ export default function ProficiencyIcon({
   alt?: string;
   className?: string;
 }) {
+  const [iconSize, setIconSize] = useState<number>(24);
+
+  const { isSmall } = useViewport();
+
+  useEffect(() => {
+    if (isSmall) setIconSize(24);
+    else setIconSize(48);
+  }, [isSmall]);
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
+      width={`${iconSize}`}
+      height={`${iconSize}`}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

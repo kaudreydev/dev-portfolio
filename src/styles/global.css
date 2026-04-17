@@ -8,6 +8,28 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@utility skill-years {
+  color: var(--color-pink-dark);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 32px;
+
+  @variant dark {
+    color: var(--color-pink);
+  }
+}
+
+@utility skill-years-md {
+  color: var(--color-pink-dark);
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 64px;
+
+  @variant dark {
+    color: var(--color-pink);
+  }
+}
+
 @layer global {
   /* Typography */
 
