@@ -9,7 +9,11 @@ export type ImageMetadata = {
   height: string;
 };
 
-export type NavItem = { path: string; text: string };
+export type NavItem = {
+  id: string;
+  path: string;
+  text: string;
+};
 
 /** Enums */
 

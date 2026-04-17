@@ -9,7 +9,11 @@ const allSkills = skillsCollection.map(
 );
 ---
 
-<section class="w-full">
-  <h2 id="skills">Skills</h2>
-  <SkillCards skills={allSkills} client:load />
-</section>
+<details id="skills-details" class="w-full">
+  <summary id="skills" class="text-4xl py-8"
+    ><h2 class="inline text-4xl">Skills</h2></summary
+  >
+  <div id="skills-content" class="mb-12">
+    <SkillCards skills={allSkills} client:load />
+  </div>
+</details>

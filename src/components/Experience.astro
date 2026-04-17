@@ -13,8 +13,10 @@ const allJobs = chain(experienceCollection)
   .value();
 ---
 
-<section class="w-full">
-  <h2 id="experience">Experience</h2>
+<details id="experience-details" class="w-full">
+  <summary id="experience" class="text-4xl py-8"
+    ><h2 class="inline text-4xl">Experience</h2></summary
+  >
   <ul class="list-none pl-4">
     {
       allJobs.map((job: Reference) => (
@@ -34,4 +36,4 @@ const allJobs = chain(experienceCollection)
       ))
     }
   </ul>
-</section>
+</details>

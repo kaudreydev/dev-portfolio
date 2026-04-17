@@ -14,8 +14,10 @@ const allProjects = chain(projectsCollection)
   .value();
 ---
 
-<section class="w-full">
-  <h2 id="projects">Projects</h2>
+<details id="projects-details" class="w-full">
+  <summary id="projects" class="text-4xl py-8"
+    ><h2 class="inline text-4xl">Projects</h2></summary
+  >
   <ul class="list-none pl-4">
     {
       allProjects.map((project: Project) => (
@@ -45,4 +47,4 @@ const allProjects = chain(projectsCollection)
       ))
     }
   </ul>
-</section>
+</details>
