@@ -1,3 +1,3 @@
 # Kathryn Audrey
 
-I am a Frontend and Fullstack Engineer with 15 years experience in creatively and efficiently building web applications using a variety of FOSS and non-FOSS technologies.
+Full-stack software engineer creating beautiful and accessible web apps with a strong focus on user experience. Compassion and care goes into everything I do, and community always comes first 💜
