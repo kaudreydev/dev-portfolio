@@ -1,6 +1,17 @@
 import z from "astro/zod";
 
-/** Object Types */
+/** Input Types */
+
+export const contactMessage = z.object({
+  name: z.string(),
+  email: z.email(),
+  subject: z.string(),
+  message: z.string(),
+});
+
+export type ContactMessage = z.infer<typeof contactMessage>;
+
+/** Value Types */
 
 export type ImageMetadata = {
   url: URL;
