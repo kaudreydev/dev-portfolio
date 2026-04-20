@@ -41,13 +41,8 @@
     filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(5375%)
       hue-rotate(275deg) brightness(90%) contrast(90%);
   }
-  .skill-years {
-    color: var(--color-pink-dark);
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 64px;
-  }
-  .dark .skill-years {
-    color: var(--color-pink);
+
+  details {
+    cursor: pointer;
   }
 }

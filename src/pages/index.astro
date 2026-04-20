@@ -10,18 +10,18 @@ import Layout from "@layouts/Layout.astro";
 import BackToTop from "@utils/BackToTop.astro";
 
 const nav = [
-  { path: `#about`, text: "about" },
-  { path: `#skills`, text: "skills" },
-  { path: `#experience`, text: "experience" },
-  { path: `#projects`, text: "projects" },
-  { path: `#contact`, text: "contact" },
+  { id: "about", path: `#about`, text: "about" },
+  { id: "skills", path: `#skills`, text: "skills" },
+  { id: "experience", path: `#experience`, text: "experience" },
+  { id: "projects", path: `#projects`, text: "projects" },
+  { id: "contact", path: `#contact`, text: "contact" },
 ];
 ---
 
 <Layout title={title} description={description}>
+  <div class="sr-only" id="start"></div>
   <Header nav={nav} />
-  <main class="justify-items-center lg:w-6xl md:w-4xl mx-auto">
-    <div class="sr-only" id="start"></div>
+  <main class="justify-items-center w-full pt-16 pb-10 md:py-30 md:px-8">
     <About />
     <Skills />
     <Experience />

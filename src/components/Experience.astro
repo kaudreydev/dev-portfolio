@@ -13,25 +13,29 @@ const allJobs = chain(experienceCollection)
   .value();
 ---
 
-<section>
-  <h2 id="experience">Experience</h2>
-  <ul class="list-none">
-    {
-      allJobs.map((job: Reference) => (
-        <li class="py-2">
-          <span>
-            <b>
-              {job.title} - {job.company}
-            </b>{" "}
-            ({job.years})
-          </span>
-          <ul class="py-2">
-            {job.details.map((detail: string) => (
-              <li class="text-lg py-1">{detail}</li>
-            ))}
-          </ul>
-        </li>
-      ))
-    }
-  </ul>
-</section>
+<details id="experience-details" class="w-full">
+  <summary id="experience" class="text-4xl py-8"
+    ><h2 class="inline text-4xl">Experience</h2></summary
+  >
+  <div id="experience-content" class="-mt-8">
+    <ul class="list-none pl-4">
+      {
+        allJobs.map((job: Reference) => (
+          <li class="py-2">
+            <span>
+              <b class="text-xl md:text-2xl">
+                {job.title} - {job.company}
+              </b>{" "}
+              ({job.years})
+            </span>
+            <ul class="py-2 pl-4 md:pl-8">
+              {job.details.map((detail: string) => (
+                <li class="text-lg py-1">{detail}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</details>

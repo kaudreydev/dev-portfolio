@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import type { Contact } from "~/types";
-import IconLink from "./utils/IconLink.astro";
+import IconLink from "./utils/IconLink.tsx";
 
 const contact = await getCollection("contact");
 const allContacts = contact.map(
@@ -9,19 +9,24 @@ const allContacts = contact.map(
 );
 ---
 
-<section class="w-full">
-  <h2 id="contact">Contact</h2>
-  <ul class="list-none flex flex-row gap-4">
-    {
-      allContacts.map((contact: Contact) => (
-        <li>
-          <IconLink
-            href={contact.href}
-            type={contact.type}
-            title={contact.title}
-          />
-        </li>
-      ))
-    }
-  </ul>
-</section>
+<details id="contact-details" class="w-full">
+  <summary id="contact" class="text-4xl py-8"
+    ><h2 class="inline text-4xl">Contact</h2></summary
+  >
+  <div id="contact-content" class="-mt-8">
+    <ul class="list-none flex flex-row gap-4">
+      {
+        allContacts.map((contact: Contact) => (
+          <li>
+            <IconLink
+              client:only="react"
+              href={contact.href}
+              type={contact.type}
+              title={contact.title}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</details>

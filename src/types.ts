@@ -9,6 +9,12 @@ export type ImageMetadata = {
   height: string;
 };
 
+export type NavItem = {
+  id: string;
+  path: string;
+  text: string;
+};
+
 /** Enums */
 
 export const technologySchema = z.enum([

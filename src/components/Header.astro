@@ -1,20 +1,27 @@
 ---
 import DarkModeSwitcher from "@components/utils/DarkModeSwitcher.tsx";
+import { type NavItem } from "~/types";
 
 interface Props {
-  nav: { path: string; text: string }[];
+  nav: NavItem[];
 }
 
 const { nav } = Astro.props as Props;
 ---
 
 <header
-  class="w-full justify-center pt-5 pb-10 flex items-center flex-col md:flex-row fixed top-0 left-1/2 -translate-x-1/2 bg-background z-40"
+  id="header"
+  class="w-full justify-center pt-5 pb-5 md:pb-10 flex items-center flex-col fixed top-0 left-1/2 -translate-x-1/2 bg-background z-40"
 >
-  <div class="flex items-center gap-5 order-2 md:order-1">
+  <div id="header-links" class="flex items-center gap-5 order-2">
     {
-      nav.map((item) => (
-        <a class="text-[2rem] md:text-[1.2rem]" href={`/${item.path}`}>
+      nav.map((item: NavItem, index: number) => (
+        <a
+          class="text-[0.8rem] md:text-[1.2rem]"
+          href={`/${item.path}`}
+          tabindex={index + 1}
+          data-link={`${item.id}`}
+        >
           {item.text}
         </a>
       ))
@@ -22,7 +29,25 @@ const { nav } = Astro.props as Props;
     <DarkModeSwitcher client:only="react" />
   </div>
   <div
-    class="absolute -bottom-10 left-0 w-full h-18 pointer-events-none bg-linear-to-b from-background via-background/80 to-background/20 z-10"
+    class="absolute -bottom-10 left-0 w-full h-10 md:h-18 pointer-events-none bg-linear-to-b from-background via-background/80 to-background/20 z-10"
   >
   </div>
 </header>
+
+<script>
+  const headerLinks = document.getElementById("header-links");
+
+  if (headerLinks) {
+    const linkCollection = headerLinks.getElementsByTagName("a");
+    for (let link of linkCollection) {
+      const linkId = link.dataset.link || "";
+      if (linkId) {
+        link.addEventListener("click", () => {
+          document
+            .getElementById(`${linkId}-details`)
+            ?.setAttribute("open", "true");
+        });
+      }
+    }
+  }
+</script>
