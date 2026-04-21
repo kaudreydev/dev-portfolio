@@ -40,31 +40,65 @@ export default function ContactForm() {
         sendMessage(e.currentTarget);
       }}
     >
-      <Field>
-        <FieldLabel htmlFor="name">Your Name</FieldLabel>
-        <Input name="name" />
-      </Field>
-      <Field>
-        <FieldLabel htmlFor="email">Your E-mail</FieldLabel>
-        <Input name="email" />
-      </Field>
-      <Field>
-        <FieldLabel htmlFor="subject">Subject (optional)</FieldLabel>
-        <Input name="subject" />
-      </Field>
-      <Field>
-        <FieldLabel htmlFor="message">Message</FieldLabel>
-        <Textarea name="message" />
-      </Field>
-      <Button name="submit" type="submit" disabled={sending}>
-        Send
-        {sending && <Spinner data-icon="inline-start" />}
-      </Button>
-      {error && <span>Error! Please try again.</span>}
+      <div className="flex flex-col gap-2 justify-between">
+        <Field>
+          <FieldLabel htmlFor="name">Your Name</FieldLabel>
+          <Input
+            name="name"
+            required
+            aria-required="true"
+            alt="Your Name field"
+            maxLength={100}
+          />
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="email">Your E-mail</FieldLabel>
+          <Input
+            name="email"
+            required
+            aria-required="true"
+            alt="Your E-mail field"
+            maxLength={150}
+          />
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="subject">Subject (optional)</FieldLabel>
+          <Input
+            name="subject"
+            alt="Subject field (optional)"
+            maxLength={150}
+          />
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="message">Message</FieldLabel>
+          <Textarea
+            name="message"
+            required
+            aria-required="true"
+            className="min-h-24"
+            title="Message field"
+            maxLength={500}
+          />
+        </Field>
+        <Button
+          name="submit"
+          type="submit"
+          disabled={sending}
+          className="w-16 ml-auto"
+        >
+          Send
+          {sending && <Spinner data-icon="inline-start" />}
+        </Button>
+        {error && <span className="text-right">Error! Please try again.</span>}
+      </div>
     </form>
   );
 
   const sentJsx = <span>Success!</span>;
 
-  return <div id="contactForm">{!sent ? formJsx : sentJsx}</div>;
+  return (
+    <div id="contactForm" className="w-80 md:w-120 mx-auto mt-4">
+      {!sent ? formJsx : sentJsx}
+    </div>
+  );
 }
