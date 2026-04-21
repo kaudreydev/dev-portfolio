@@ -4,7 +4,7 @@ import { sendMessage } from "./sendMessage";
 
 export const server = {
   send: defineAction({
-    accept: "form",
+    accept: "json",
     input: contactMessage,
     handler: sendMessage,
   }),

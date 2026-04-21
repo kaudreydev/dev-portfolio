@@ -3,10 +3,13 @@ import z from "astro/zod";
 /** Input Types */
 
 export const contactMessage = z.object({
-  name: z.string(),
-  email: z.email(),
-  subject: z.string(),
-  message: z.string(),
+  name: z.string().max(100, "Name must be at most 100 characters."),
+  email: z.email().max(150, "E-mail must be at most 150 characters."),
+  subject: z
+    .string()
+    .max(150, "Subject must be at most 150 characters.")
+    .optional(),
+  message: z.string().max(500, "Message must be at most 500 characters."),
 });
 
 export type ContactMessage = z.infer<typeof contactMessage>;

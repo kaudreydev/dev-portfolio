@@ -45,4 +45,8 @@
   details {
     cursor: pointer;
   }
+
+  ::placeholder {
+    opacity: 30%;
+  }
 }
