@@ -1,92 +1,52 @@
-# Astronaut
+# Dev Portfolio Site
 
-_This is a starter template for static site generator [Astro](https://astro.build/)._
+This portfolio site, originally created for [KAudreyDev](https://github.com/kaudreydev), is built on [Astro](https://astro.build) using [React integration](https://docs.astro.build/en/guides/integrations-guide/react/) for client interactions. I decided to use Astro for my own learning, as I'd mostly used Next.js before and wanted to try something different this time.
 
-I'm a big fan of Astro, as it combines two things I really like: A component-based approach and zero client-side JavaScript! This template is pretty opinionated, as it's composed how I would set up my projects. But sharing is caring, so feel free to use it for your own projects or customise it. After cloning it, run `npm install` to install all necessary dependencies and then `npm start` to start your local dev server. Here are all the features:
+I chose to use the [Astronaut](https://astro.build/themes/details/astronaut/) theme created by [Steve Frenzel](https://www.stevefrenzel.dev), as the theme provides a solid base to start an Astro app that includes considerations for accessibility and usability, which are important to me. Check out [the theme on Codeberg](https://codeberg.org/stvfrnzl/astro-naut) for all the details.
 
-## Absolute imports
+Sharing is caring so please feel free to use and customize this repo to create your own portfolio site, or start from scratch with Steve's Astronaut theme for Astro :)
 
-Tired of imports looking like this?
+# Getting Started
 
-```javascript
-import Layout from "../../../../../layouts/Layout.astro";
+1. Clone the repository locally.
+2. From the project directory, run `pnpm install`. (See [here](https://pnpm.io/pnpm-vs-npm) for reasons to use pnpm over npm.)
+3. Once installation is finished, run `pnpm start` to start the local dev server.
+
+# Customizing the Content
+
+Most of the text and information displayed on the site is stored in markdown and JSON collections within the `src/content` directory. You can edit these files to populate them with your own information such as skills, experience, and projects. All information is strongly typed according to the types defined in `src/types.ts`.
+
+- `about.md` - The content of this file is inserted directly into the About section. For my site, it contains my name and a short blurb about me.
+- `contact.json` - A list of contact links that will be used to create `IconLink` components. The icons are stored and referenced from the `src/images` directory and must be in SVG format.
+- `experience.json` - A list of jobs with the company, position title, year(s), and list of job details.
+- `projects.json` - A list of projects with the company, project name, year(s), list of project details, and list of technologies used. The list of available technologies is found in `src/types.ts` if you need to expand it.
+- `site.json` - Stores site metadata including title and description.
+- `skills.json` - A list of skills including the skill name, icon name from [Simple Icons](https://simpleicons.org/), proficiency level from 0-3 (Familiar, Growing, Skilled, Expert), and years of experience. Note that Simple Icons does not have a complete collection of brand icons so you may need to source some on your own.
+
+# Configuring the Contact Form
+
+The contact form is a more complex component that requires configuration using [environment variables](https://docs.astro.build/en/guides/environment-variables/#env-files). Follow the steps below to get set up.
+
+1. Sign up with [Resend](https://resend.com) and create an API key.
+2. Create a file named `.env` in the root of the project directory.
+3. Add the following keys with whatever values you wish to use:
+
+```
+EMAIL_SITE="Your Name <noreply@example.com>"
+EMAIL_OWNER=your_email@example.com
+RESEND_API_KEY=your_Resend_API_key
 ```
 
-Me too, which is why I'm using absolute imports to make it look nice and clean:
+- `EMAIL_SITE` will be used as the sender for e-mails sent from the site.
+- `EMAIL_OWNER` will be used for the 'reply to' address on the confirmation e-mail, and will also be sent a notification containing message details when a contact message is submitted.
 
-```javascript
-import Layout from "@layouts/Layout.astro";
-```
+Feel free to customize the e-mail settings or format as you see fit!
 
-## CSS reset
+# Credits
 
-I never start a project without Andy Bell's (more) modern CSS reset! It lays the foundation for what I'm about to do with Utopia's fluid responsive design. Click here for more info about these settings: [A (more) modern CSS reset](https://andy-bell.co.uk/a-more-modern-css-reset/)
-
-## Custom fonts
-
-Using system fonts is a safe and performant way to add some identity to your typography, but let's be honest: They're overused and quite boring. Which is why I like to use custom fonts, usually one for headlines and one for body text. You can of course always change them to Lobster or Papyrus, I won't judge.
-
-## Fluid design
-
-I need you to sit down for this one. You don't really need breakpoints to define your layout for mobile, tablet and desktop devices. How could you even anticipate what device will be used to gaze upon your beautiful website?
-
-Wouldn't make it more sense if you had a fluid, yet robust design which works for every viewport? Which requires less code and no `breakpoints.css` nearing 1000 lines of code? Let me introduce you to [Utopia](https://utopia.fyi/), which is used to generate adaptive font sizes and spacing.
-
-You should also check out [The ideal viewport doesn’t exist](https://viewports.fyi/) for a deep-dive into this topic. And while you're at it, have a look at [Be the browser’s mentor, not its micromanager.](https://buildexcellentwebsit.es/) as well.
-
-## Pre-commit hooks
-
-Committing to something can sometimes take a lot of effort. Committing code is no exception, but at least here we can pull out the safety net to soften our fall in case we made a mistake. When committing your changes, it's running `npm run build`, which will look for the following things in your project before building it:
-
-- Errors
-- Warnings
-- Hints
-
-When your pipeline is free of errors AND the build was successful, it'll commit your changes. You're welcome. 🤗
-
-## Preference detection
-
-This template automatically changes the theme based on your operating settings by utilizing `prefers-color-scheme`. It also checks if you prefer reduced motion via `prefers-reduced-motion`. Look and behold, the power of CSS!
-
-## Prettier
-
-I don't know about you, but if my code is not nicely formatted after hitting save, I'm starting to feel very weird. Which is why this comes with a Prettier configuration, in case you're using it. Or a you one of those people who do this manually?!
-
-## Search engine optimization (SEO)
-
-Predefined values for improved SEO can be found in `Layout.astro`. These settings have been my reliable companion for a couple of years now and I put a lot of research, work and testing into it.
-
-## Security headers
-
-Better safe than sorry, am I right? There are multiple ways to add security headers to your website and I decided to store them in a `_headers` file. This setup might be to strict for your use case, so go ahead and adjust it accordingly. The following headers are included:
-
-- Cross-Origin-Embedder-Policy
-- Cross-Origin-Opener-Policy
-- Cross-Origin-Resource-Policy
-- Content-Security-Policy
-- Permissions-Policy
-- Referrer-Policy
-- Upgrade-Insecure-Requests
-- X-Content-Type-Options
-- X-Frame-Options
-
-This helped me to get an [A rating on Security Headers](https://securityheaders.com/?q=https://astro-naut.statichost.eu/) and an [B+ rating on HTTP Observatory Report](https://developer.mozilla.org/en-US/observatory/analyze?host=astro-naut.statichost.eu).
-
-When I wanted to test security headers in the past, I had to push my changes, wait for deployment, check if anything's broken, go back to the code, push again and so on. Luckily, Astro offers to test your security headers locally! I stumbled upon this amazing feature by accident in Cassidy's article [Three ways to set headers with Netlify and Astro](https://cassidoo.co/post/netlify-astro-headers/).
-
-All you gotta do is to add the headers to your `astro.config.mjs` file. This way you can test everything locally, make sure it works and push the changes once your done.
-
-## Usability
-
-I've added a bunch of handy utilities which will not only improve usability, but accessibility as well. Here's a list of them:
-
-1. "Back to top" button
-2. External link (showing icon)
-3. Improved focus behaviour (thanks to [Stephanie Eckles](https://css-tricks.com/standardizing-focus-styles-with-css-custom-properties/) & [Adam Argyle](https://codepen.io/argyleink/pen/JjEzeLp))
-4. Skip link
-
-Very proud of the the `ExternalLink.astro` component, as it handles a couple of use cases:
-
-- `name` prop for accessible and visible name
-- Adjustable font and icon size
-- Lets you configure the `rel` attribute
+- Site developed using the [Astronaut](https://astro.build/themes/details/astronaut/) theme for Astro created by [Steve Frenzel](https://www.stevefrenzel.dev)
+- Site header clipped from the [Void](https://astro.build/themes/details/void/) theme for Astro created by [Jorge Rosbel](https://github.com/JorgeRosbel)
+- Site design inspired by portfolio sites for [Brittany Chiang](https://brittanychiang.com) and [Monica
+  Dinculescu](https://meowni.ca)
+- My wonderful partner [Kristine Horn](https://www.linkedin.com/in/krin-horn/), who helped me with organization, planning, testing, and accessibility. An extremely caring and talented individual any company would be lucky to have on their staff!
+- Our darling kitties Felix and Pixel, whose company and emotional support helped make this project happen.
