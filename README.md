@@ -35,10 +35,12 @@ The contact form is a more complex component that requires configuration using [
 EMAIL_SITE="Your Name <noreply@example.com>"
 EMAIL_OWNER=your_email@example.com
 RESEND_API_KEY=your_Resend_API_key
+SITE_URL=https://yoursite.url/
 ```
 
 - `EMAIL_SITE` will be used as the sender for e-mails sent from the site.
 - `EMAIL_OWNER` will be used for the 'reply to' address on the confirmation e-mail, and will also be sent a notification containing message details when a contact message is submitted.
+- `SITE_URL` is used for the Astro config and server headers and defaults to `https://localhost:4321/`
 
 Feel free to customize the e-mail settings or format as you see fit!
 
