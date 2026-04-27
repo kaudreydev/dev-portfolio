@@ -76,7 +76,7 @@ export default function SkillCards({ skills }: { skills: Skill[] }) {
           <div>Sort by:</div>
           <SkillSort sortValue={sortValue} onValueChange={setSortValue} />
         </div>
-        <div className="grid gap-4 mx-auto grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+        <div className="grid gap-4 mx-auto grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           {sortedSkills.map((skill: Skill) => (
             <Card key={skill.id} className={`bg-cyan-50 dark:bg-slate-700`}>
               <img

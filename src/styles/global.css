@@ -247,6 +247,8 @@
 }
 
 @theme inline {
+  --breakpoint-md: 69rem;
+  --breakpoint-lg: 78rem;
   --font-heading: "Anybody", sans-serif;
   --font-body: "Inter", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
