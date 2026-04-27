@@ -1,8 +1,16 @@
 ---
-import * as aboutMe from "@content/about.md";
 import PixelHeart from "@components/utils/PixelHeart";
+import * as aboutMe from "@content/about.md";
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { Contact } from "~/types";
+import IconLink from "./utils/IconLink";
 
 const { name, pronouns } = aboutMe.frontmatter;
+
+const contact = await getCollection("contact");
+const allContacts = contact.map(
+  (entry: CollectionEntry<"contact">) => entry.data as Contact,
+);
 ---
 
 <section class="w-full">
@@ -16,4 +24,20 @@ const { name, pronouns } = aboutMe.frontmatter;
       <PixelHeart size={20} client:only="react" />
     </p>
   </div>
+  <ul
+    class="list-none px-0 flex flex-row gap-6 justify-center md:justify-start md:pl-4"
+  >
+    {
+      allContacts.map((contact: Contact) => (
+        <li>
+          <IconLink
+            client:only="react"
+            href={contact.href}
+            type={contact.type}
+            title={contact.title}
+          />
+        </li>
+      ))
+    }
+  </ul>
 </section>

@@ -1,13 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import type { Contact } from "~/types";
-import IconLink from "./utils/IconLink.tsx";
 import ContactForm from "./utils/ContactForm";
-
-const contact = await getCollection("contact");
-const allContacts = contact.map(
-  (entry: CollectionEntry<"contact">) => entry.data as Contact,
-);
 ---
 
 <details id="contact-details" class="w-full">
@@ -16,19 +8,5 @@ const allContacts = contact.map(
   >
   <div id="contact-content" class="-mt-8">
     <ContactForm client:only="react" />
-    <ul class="list-none flex flex-row gap-4">
-      {
-        allContacts.map((contact: Contact) => (
-          <li>
-            <IconLink
-              client:only="react"
-              href={contact.href}
-              type={contact.type}
-              title={contact.title}
-            />
-          </li>
-        ))
-      }
-    </ul>
   </div>
 </details>

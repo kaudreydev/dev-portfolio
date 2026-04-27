@@ -2,7 +2,7 @@ import { useStore } from "@nanostores/react";
 import { useEffect, useState } from "react";
 import { userTheme } from "~/store";
 
-const iconSize = 48;
+const iconSize = 32;
 
 export default function IconLink({
   fontSize,
