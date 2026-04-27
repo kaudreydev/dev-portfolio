@@ -1,8 +1,19 @@
 ---
-import { Content } from "@content/about.md";
+import * as aboutMe from "@content/about.md";
+import PixelHeart from "@components/utils/PixelHeart";
+
+const { name, pronouns } = aboutMe.frontmatter;
 ---
 
 <section class="w-full">
   <h2 id="about" class="sr-only">About</h2>
-  <Content />
+  <div class="mt-8">
+    <span class="text-4xl md:text-6xl font-extrabold font-heading">{name}</span
+    ><br />
+    <span class="text-2xl md:text-3xl">{pronouns}</span><br />
+    <p class="text-xl">
+      <span>{aboutMe.rawContent}</span>
+      <PixelHeart size={20} client:only="react" />
+    </p>
+  </div>
 </section>
