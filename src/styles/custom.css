@@ -15,6 +15,10 @@
     filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(1879%)
       hue-rotate(150deg) brightness(103%) contrast(107%);
   }
+  .filter-blue-dark {
+    filter: brightness(0) saturate(100%) invert(10%) sepia(35%) saturate(1125%)
+      hue-rotate(178deg) brightness(88%) contrast(85%);
+  }
   .filter-grey {
     filter: brightness(0) saturate(100%) invert(69%) sepia(0%) saturate(1%)
       hue-rotate(349deg) brightness(99%) contrast(93%);

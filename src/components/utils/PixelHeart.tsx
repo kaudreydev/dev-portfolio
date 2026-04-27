@@ -11,7 +11,7 @@ export default function PixelHeart({ size = defaultSize }: { size?: number }) {
   useEffect(() => setIsDarkMode("dark" === $userTheme), [$userTheme]);
   return (
     <svg
-      className={`${!isDarkMode && "filter-pink-dark"}`}
+      className={`${!isDarkMode && "filter-blue-dark"}`}
       width={size}
       height={size}
       viewBox="0 0 128 128"
@@ -20,7 +20,7 @@ export default function PixelHeart({ size = defaultSize }: { size?: number }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>
-        {isDarkMode ? "Light Blue Pixel Heart" : "Dark Pink Pixel Heart"}
+        {isDarkMode ? "Light Blue Pixel Heart" : "Dark Blue Pixel Heart"}
       </title>
       <defs id="defs1" />
       <rect
