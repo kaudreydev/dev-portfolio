@@ -15,7 +15,7 @@ const { nav } = Astro.props as Props;
 >
   <div id="header-links" class="flex items-center gap-5 order-2">
     {
-      nav.map((item: NavItem, index: number) => (
+      nav.map((item: NavItem) => (
         <a
           class="text-[0.8rem] md:text-[1.2rem]"
           href={`/${item.path}`}
