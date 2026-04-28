@@ -4,6 +4,7 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -16,6 +17,22 @@
     /* "off white" #D6D6D6 */
     filter: brightness(0) saturate(100%) invert(65%) sepia(83%) saturate(0%)
       hue-rotate(250deg) brightness(111%) contrast(98%);
+  }
+}
+
+@utility credit-content {
+  @apply prose pt-8 -mb-24 mx-auto w-200;
+
+  @variant prose-a {
+    @apply text-base text-foreground;
+  }
+
+  @variant prose-p {
+    @apply text-base text-foreground text-center;
+  }
+
+  @variant prose-strong {
+    @apply text-base text-foreground;
   }
 }
 
