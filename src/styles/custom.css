@@ -23,6 +23,11 @@
     filter: brightness(0) saturate(100%) invert(69%) sepia(0%) saturate(1%)
       hue-rotate(349deg) brightness(99%) contrast(93%);
   }
+  .filter-grey-dark {
+    /* #494440 */
+    filter: brightness(0) saturate(100%) invert(23%) sepia(7%) saturate(576%)
+      hue-rotate(344deg) brightness(100%) contrast(85%);
+  }
   .filter-pink {
     /* #EB6BD3 */
     filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(5375%)
@@ -41,6 +46,12 @@
     filter: brightness(0) saturate(100%) invert(72%) sepia(76%) saturate(4250%)
       hue-rotate(279deg) brightness(100%) contrast(102%);
   }
+  .filter-white {
+    /* #D6D6D6 */
+    filter: brightness(0) saturate(100%) invert(65%) sepia(83%) saturate(0%)
+      hue-rotate(250deg) brightness(111%) contrast(98%);
+  }
+
   .proficiency-level {
     filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(5375%)
       hue-rotate(275deg) brightness(90%) contrast(90%);

@@ -7,6 +7,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@utility back-to-top {
+  /* "dark grey" #494440 */
+  filter: brightness(0) saturate(100%) invert(23%) sepia(7%) saturate(576%)
+    hue-rotate(344deg) brightness(100%) contrast(85%);
+
+  @variant dark {
+    /* "off white" #D6D6D6 */
+    filter: brightness(0) saturate(100%) invert(65%) sepia(83%) saturate(0%)
+      hue-rotate(250deg) brightness(111%) contrast(98%);
+  }
+}
+
 @utility font-heading {
   font-family: var(--font-heading);
 }

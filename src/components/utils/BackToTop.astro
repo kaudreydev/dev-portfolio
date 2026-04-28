@@ -3,13 +3,12 @@ import { Image } from "astro:assets";
 import arrow from "@images/arrow-upward.svg";
 ---
 
-<a href="#start" id="back-to-top">
-  <Image alt="Back to top" src={arrow} />
+<a href="#start" id="back-to-top" class="bg-cyan-50 dark:bg-slate-700">
+  <Image alt="Back to top" class="back-to-top" src={arrow} />
 </a>
 
 <style>
   a {
-    background: var(--color-green);
     border-radius: var(--border-radius);
     bottom: var(--space-xs);
     position: fixed;
