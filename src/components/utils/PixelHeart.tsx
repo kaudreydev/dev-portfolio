@@ -1,0 +1,89 @@
+import { useStore } from "@nanostores/react";
+import { useEffect, useState } from "react";
+import { userTheme } from "~/store";
+
+const defaultSize = 128;
+
+export default function PixelHeart({ size = defaultSize }: { size?: number }) {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const $userTheme = useStore(userTheme);
+
+  useEffect(() => setIsDarkMode("dark" === $userTheme), [$userTheme]);
+  return (
+    <svg
+      className={`${!isDarkMode && "filter-blue-dark"}`}
+      width={size}
+      height={size}
+      viewBox="0 0 128 128"
+      version="1.1"
+      id="svg1"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>
+        {isDarkMode ? "Light Blue Pixel Heart" : "Dark Blue Pixel Heart"}
+      </title>
+      <defs id="defs1" />
+      <rect
+        style={{
+          display: "none",
+          fill: "#1d293c",
+          fillOpacity: 1,
+          strokeWidth: 0.0666666,
+        }}
+        id="rect9"
+        width="127.99995"
+        height="127.99999"
+        x="6.9872624e-07"
+        y="1.8423169e-06"
+      />
+      <g id="layer2" transform="translate(-531.21368,417.62082)">
+        <g
+          id="g9"
+          style={{ display: "inline" }}
+          transform="matrix(0.19357381,0,0,0.19357381,343.3747,-444.21952)"
+        >
+          <path
+            style={{
+              fontVariationSettings: "'wght' 700",
+              fill: "#cefafe",
+              fillOpacity: 1,
+              strokeWidth: 2.09973,
+            }}
+            d="m 1112.0213,216.06365 h 127.5045 l -1.5204,41.99469 h 41.9947 v 41.99471 0 h 41.9946 v -41.99471 h 41.9948 l -3.3163,-41.99469 h 127.696 l 1.6044,41.99469 h 41.9947 v 41.99471 h 41.9946 v 167.97878 h -41.9946 v 41.9947 h -41.9947 v 41.99469 h -41.9948 v 41.99469 h -41.9946 l 3.8028,41.99471 h -45.8395 l 0.042,41.99469 h -41.9948 V 720 H 1280 v -41.99469 h -41.9946 l 4.7946,-41.99469 h -29.4682 -16.3715 l -0.9497,-41.99471 h -41.9947 v -41.99469 h -41.9946 v -41.99469 h -41.9948 v -41.9947 h -41.995 V 300.05305 h 41.9947 v -41.99471 h 41.9947 z"
+            id="path7"
+          />
+          <g
+            id="g8"
+            transform="matrix(0.89056176,0,0,0.89056176,143.46691,57.507826)"
+            style={{ display: "none" }}
+          >
+            <path
+              style={{
+                fontSize: "287.963px",
+                fontFamily: "Press Start 2P",
+                fontVariationSettings: "'wght' 700",
+                fill: "#c55fb7",
+                strokeWidth: 0.767745,
+              }}
+              d="M 1196.0106,556.02055 V 304.05292 h 71.9908 v 107.98613 h 35.9953 v -35.99538 h 35.9954 v -35.99538 h 35.9954 v -35.99537 h 71.9908 v 35.99537 h -35.9954 v 35.99538 h -35.9954 v 35.99538 h -35.9954 v 35.99537 h 35.9954 v 35.99538 h 35.9954 v 35.99538 h 35.9954 v 35.99537 h -107.9862 v -35.99537 h -35.9954 V 484.0298 h -35.9953 v 71.99075 z"
+              id="text7"
+              aria-label="K"
+            />
+            <path
+              style={{
+                fontSize: "287.963px",
+                fontFamily: "Press Start 2P",
+                fontVariationSettings: "'wght' 700",
+                fill: "#1d293c",
+                strokeWidth: 0.767745,
+              }}
+              d="M 1183.0134,539.87273 V 287.90509 h 71.9908 v 107.98613 h 35.9954 v -35.99538 h 35.9953 v -35.99537 h 35.9954 v -35.99538 h 71.9908 v 35.99538 h -35.9954 v 35.99537 h -35.9954 v 35.99538 h -35.9954 v 35.99538 h 35.9954 v 35.99537 h 35.9954 v 35.99538 h 35.9954 v 35.99538 h -107.9862 v -35.99538 h -35.9953 v -35.99538 h -35.9954 v 71.99076 z"
+              id="text8"
+              aria-label="K"
+            />
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}

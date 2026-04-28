@@ -7,11 +7,6 @@ const resend = new Resend(import.meta.env.RESEND_API_KEY);
 const emailSite = import.meta.env.EMAIL_SITE;
 const emailOwner = import.meta.env.EMAIL_OWNER;
 
-console.log("Environment: ", {
-  emailSite,
-  emailOwner,
-});
-
 // Send e-mail to site owner
 async function sendToOwner({
   name,

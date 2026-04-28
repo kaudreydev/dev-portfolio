@@ -56,6 +56,7 @@ export default function ContactForm() {
                 <FieldLabel htmlFor="contact-form-name">Your Name</FieldLabel>
                 <Input
                   {...field}
+                  id="contact-form-name"
                   name="contact-form-name"
                   required
                   aria-required="true"
@@ -80,6 +81,7 @@ export default function ContactForm() {
                 </FieldLabel>
                 <Input
                   {...field}
+                  id="contact-form-email"
                   name="contact-form-email"
                   type="email"
                   required
@@ -100,10 +102,13 @@ export default function ContactForm() {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel htmlFor="subject">Subject (optional)</FieldLabel>
+                <FieldLabel htmlFor="contact-form-subject">
+                  Subject (optional)
+                </FieldLabel>
                 <Input
                   {...field}
-                  name="subject"
+                  id="contact-form-subject"
+                  name="contact-form-subject"
                   aria-invalid={fieldState.invalid}
                   placeholder="Web Work Opportunity"
                   autoComplete="off"
@@ -123,6 +128,7 @@ export default function ContactForm() {
                 <FieldLabel htmlFor="contact-form-message">Message</FieldLabel>
                 <Textarea
                   {...field}
+                  id="contact-form-message"
                   name="contact-form-message"
                   className="min-h-24"
                   required
