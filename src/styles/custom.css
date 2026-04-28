@@ -57,7 +57,7 @@
       hue-rotate(275deg) brightness(90%) contrast(90%);
   }
 
-  details {
+  summary {
     cursor: pointer;
   }
 
