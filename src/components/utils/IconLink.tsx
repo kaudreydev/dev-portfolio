@@ -43,6 +43,8 @@ export default function IconLink({
     >
       <span className="sr-only">(external link)</span>
       <img
+        alt={`${type} icon`}
+        loading="eager"
         src={`/src/images/${type}.svg`}
         aria-hidden="true"
         height={iconSize}

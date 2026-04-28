@@ -84,6 +84,7 @@ export default function SkillCards({ skills }: { skills: Skill[] }) {
                 height={iconSize}
                 width={iconSize}
                 alt={`${skill.name} icon`}
+                loading="lazy"
                 src={iconPath.replace("{icon}", skill.icon.toLowerCase())}
               />
               <CardHeader>
