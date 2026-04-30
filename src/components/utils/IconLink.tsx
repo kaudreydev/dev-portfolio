@@ -45,7 +45,7 @@ export default function IconLink({
       <img
         alt={`${type} icon`}
         loading="eager"
-        src={`/src/images/${type}.svg`}
+        src={`/images/${type}.svg`}
         aria-hidden="true"
         height={iconSize}
         width={iconSize}
