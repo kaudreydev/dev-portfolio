@@ -1,8 +1,15 @@
+import node from "@astrojs/node";
 import react from "@astrojs/react";
 import vercel from "@astrojs/vercel";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
+
+let adapter = vercel({ isr: true });
+
+if (process.argv[3] === "--node" || process.argv[4] === "--node") {
+  adapter = node({ mode: "standalone" });
+}
 
 const { SITE_URL } =
   loadEnv(process.env.SITE_URL, process.cwd(), "") || "https://localhost:4321/";
@@ -27,6 +34,8 @@ export default defineConfig({
     },
   },
 
+  output: "server",
+
   site: SITE_URL,
 
   vite: {
@@ -34,5 +43,5 @@ export default defineConfig({
   },
 
   integrations: [react()],
-  adapter: vercel(),
+  adapter,
 });
