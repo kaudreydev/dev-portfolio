@@ -23,14 +23,14 @@
 }
 
 @utility credit-content {
-  @apply prose pt-8 -mb-16 mx-auto w-200;
+  @apply prose pt-8 px-4 md:px-0 mb-4 mx-auto w-auto max-w-150;
 
   @variant prose-a {
     @apply text-base text-foreground;
   }
 
   @variant prose-p {
-    @apply text-base text-foreground text-center;
+    @apply text-base text-foreground text-justify;
   }
 
   @variant prose-strong {

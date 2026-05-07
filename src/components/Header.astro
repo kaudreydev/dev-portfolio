@@ -13,17 +13,19 @@ const { nav } = Astro.props as Props;
   id="header"
   class="w-full justify-center pt-5 pb-5 md:pb-10 flex items-center flex-col fixed top-0 left-1/2 -translate-x-1/2 bg-background z-40"
 >
-  <div id="header-links" class="flex items-center gap-5 order-2">
+  <div id="header-links" class="flex flex-wrap items-center gap-5 order-2 px-4">
     {
       nav.map((item: NavItem) => (
-        <a
-          class="text-[0.8rem] md:text-[1.2rem]"
-          href={`/${item.path}`}
-          tabindex="0"
-          data-link={`${item.id}`}
-        >
-          {item.text}
-        </a>
+        <div class="w-26">
+          <a
+            class="text-[1.2rem]"
+            href={`/${item.path}`}
+            tabindex="0"
+            data-link={`${item.id}`}
+          >
+            {item.text}
+          </a>
+        </div>
       ))
     }
     <DarkModeSwitcher client:only="react" />
