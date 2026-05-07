@@ -2,54 +2,18 @@
 
 @layer custom {
   /* Your custom styles go here. Never using !important again 🤗 */
-  .gradient-bg {
-    background: #eb6bd3;
-    background: linear-gradient(
-      90deg,
-      rgba(235, 107, 211, 1) 0%,
-      rgba(124, 126, 230, 1) 50%,
-      rgba(121, 232, 223, 1) 100%
-    );
+
+  /* Altcha Styles */
+
+  .altcha-main {
+    min-width: 100%;
   }
-  .filter-blue {
-    filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(1879%)
-      hue-rotate(150deg) brightness(103%) contrast(107%);
-  }
-  .filter-blue-dark {
-    filter: brightness(0) saturate(100%) invert(10%) sepia(35%) saturate(1125%)
-      hue-rotate(178deg) brightness(88%) contrast(85%);
-  }
-  .filter-grey {
-    filter: brightness(0) saturate(100%) invert(69%) sepia(0%) saturate(1%)
-      hue-rotate(349deg) brightness(99%) contrast(93%);
-  }
-  .filter-grey-dark {
-    /* #494440 */
-    filter: brightness(0) saturate(100%) invert(23%) sepia(7%) saturate(576%)
-      hue-rotate(344deg) brightness(100%) contrast(85%);
-  }
-  .filter-pink {
-    /* #EB6BD3 */
-    filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(5375%)
-      hue-rotate(275deg) brightness(90%) contrast(90%);
-  }
-  .filter-pink-dark {
-    /* #980060 */
-    filter: brightness(0) saturate(100%) invert(8%) sepia(86%) saturate(6082%)
-      hue-rotate(311deg) brightness(87%) contrast(105%);
-  }
-  .filter-light-pink {
-    filter: brightness(0) saturate(100%) invert(90%) sepia(55%) saturate(3949%)
-      hue-rotate(278deg) brightness(105%) contrast(109%);
-  }
-  .filter-very-pink {
-    filter: brightness(0) saturate(100%) invert(72%) sepia(76%) saturate(4250%)
-      hue-rotate(279deg) brightness(100%) contrast(102%);
-  }
-  .filter-white {
-    /* #D6D6D6 */
-    filter: brightness(0) saturate(100%) invert(65%) sepia(83%) saturate(0%)
-      hue-rotate(250deg) brightness(111%) contrast(98%);
+
+  /* Element Styles */
+
+  .form-field::placeholder {
+    color: var(--foreground);
+    opacity: 50%;
   }
 
   .proficiency-level {
@@ -61,7 +25,16 @@
     cursor: pointer;
   }
 
-  ::placeholder {
-    opacity: 30%;
+  /* SVG Filters */
+
+  .filter-pink {
+    /* #EB6BD3 */
+    filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(5375%)
+      hue-rotate(275deg) brightness(90%) contrast(90%);
+  }
+  .filter-pink-dark {
+    /* #980060 */
+    filter: brightness(0) saturate(100%) invert(8%) sepia(86%) saturate(6082%)
+      hue-rotate(311deg) brightness(87%) contrast(105%);
   }
 }
