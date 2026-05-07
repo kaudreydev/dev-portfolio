@@ -25,6 +25,8 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@uireact/tools": "^0.1.2",
+    "altcha": "^3.0.4",
+    "altcha-lib": "^2.0.3",
     "astro": "^6.1.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

@@ -25,7 +25,7 @@ export default defineConfig({
       "Cross-Origin-Embedder-Policy": "require-corp",
       "Cross-Origin-Opener-Policy": "same-origin",
       "Cross-Origin-Resource-Policy": "cross-origin",
-      "Content-Security-Policy": `default-src * ${SITE_URL}; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' ${SITE_URL} https://unpkg.com/ data:`,
+      "Content-Security-Policy": `default-src * ${SITE_URL}; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' ${SITE_URL} https://unpkg.com/ data:; worker-src 'self' blob: ${SITE_URL}`,
       "Permissions-Policy": "geolocation=(), camera=(), microphone=()",
       "Referrer-Policy": "strict-origin-when-cross-origin",
       "Upgrade-Insecure-Requests": "1",
