@@ -23,7 +23,7 @@
 }
 
 @utility credit-content {
-  @apply prose pt-8 -mb-24 mx-auto w-200;
+  @apply prose pt-8 -mb-16 mx-auto w-200;
 
   @variant prose-a {
     @apply text-base text-foreground;
