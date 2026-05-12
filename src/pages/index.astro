@@ -22,7 +22,7 @@ const nav = [
 <Layout title={title} description={description}>
   <div class="sr-only" id="start"></div>
   <Header nav={nav} />
-  <main class="justify-items-center w-full pt-16 pb-10 md:py-30 md:px-50">
+  <main class="justify-items-center w-full mt-8 pt-16 pb-10 md:py-30 md:px-50">
     <About />
     <Skills />
     <Experience />
@@ -35,6 +35,20 @@ const nav = [
     <BackToTop />
   </section>
 </Layout>
+
+<script>
+  import { userTheme } from "~/store";
+
+  const savedTheme = userTheme.get();
+
+  if (!savedTheme) {
+    userTheme.set(
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light",
+    );
+  }
+</script>
 
 <script>
   (globalThis as any).__zod_globalConfig = { jitless: true };
