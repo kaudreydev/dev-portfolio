@@ -40,6 +40,7 @@ export default function IconLink({
       rel="noopener noreferrer"
       aria-label={`${title} (external link)`}
       title={`${title} (external link)`}
+      tabIndex={0}
     >
       <span className="sr-only">(external link)</span>
       <img
