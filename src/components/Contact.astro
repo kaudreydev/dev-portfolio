@@ -2,10 +2,11 @@
 import ContactForm from "./utils/ContactForm";
 ---
 
+<h2 id="contact" class="sr-only">Contact</h2>
 <details id="contact-details" class="w-full">
-  <summary id="contact" class="text-4xl py-8"
-    ><h2 class="inline text-4xl">Contact</h2></summary
-  >
+  <summary id="contact" class="text-4xl py-8">
+    <span class="inline font-heading">Contact</span>
+  </summary>
   <div id="contact-content" class="-mt-8">
     <ContactForm client:only="react" />
   </div>

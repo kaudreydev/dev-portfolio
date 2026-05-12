@@ -14,10 +14,11 @@ const allProjects = chain(projectsCollection)
   .value();
 ---
 
+<h2 id="projects" class="sr-only">Projects</h2>
 <details id="projects-details" class="w-full">
-  <summary id="projects" class="text-4xl py-8"
-    ><h2 class="inline text-4xl">Projects</h2></summary
-  >
+  <summary class="text-4xl py-8">
+    <span class="inline font-heading">Projects</span>
+  </summary>
   <div id="projects-content" class="-mt-8">
     <ul class="list-none pl-4">
       {

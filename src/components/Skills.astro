@@ -9,11 +9,12 @@ const allSkills = skillsCollection.map(
 );
 ---
 
+<h2 id="skills" class="sr-only">Skills</h2>
 <details id="skills-details" class="w-full">
-  <summary id="skills" class="text-4xl py-8"
-    ><h2 class="inline text-4xl">Skills</h2></summary
-  >
-  <div id="skills-content" class="-mt-8">
+  <summary class="text-4xl py-8">
+    <span class="inline font-heading">Skills</span>
+  </summary>
+  <div id="skills-content">
     <SkillCards skills={allSkills} client:load />
   </div>
 </details>
