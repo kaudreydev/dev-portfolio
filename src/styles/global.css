@@ -87,6 +87,10 @@
     hyphens: auto;
   }
 
+  a:link {
+    color: var(--anchor);
+  }
+
   a:visited {
     color: var(--anchor-visited);
   }
@@ -143,6 +147,7 @@
 :root {
   --background: oklch(95.6% 0.045 203.388);
   --foreground: oklch(0.3903 0.0095 61.23);
+  --anchor: oklch(0.4672 0.3026 266.25); /* #1A1AFF */
   --anchor-visited: oklch(0.46 0.2148 301.3);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -179,6 +184,7 @@
 .dark {
   --background: oklch(27.9% 0.041 260.031);
   --foreground: oklch(0.8761 0 0);
+  --anchor: oklch(0.7788 0.1161 283.37); /* #ADADFF */
   --anchor-visited: oklch(0.7802 0.112 307.74);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -258,7 +264,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;

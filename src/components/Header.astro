@@ -1,5 +1,5 @@
 ---
-import DarkModeSwitcher from "@components/utils/DarkModeSwitcher.tsx";
+import Navigation from "@components/utils/Navigation";
 import { type NavItem } from "~/types";
 
 interface Props {
@@ -11,45 +11,11 @@ const { nav } = Astro.props as Props;
 
 <header
   id="header"
-  class="w-full justify-center pt-5 pb-5 md:pb-10 flex items-center flex-col fixed top-0 left-1/2 -translate-x-1/2 bg-background z-40"
+  class="w-full justify-center md:pb-10 flex items-center flex-col fixed top-0 left-1/2 -translate-x-1/2 bg-background z-40"
 >
-  <div id="header-links" class="flex flex-wrap items-center gap-5 order-2 px-4">
-    {
-      nav.map((item: NavItem) => (
-        <div class="w-26">
-          <a
-            class="text-[1.2rem]"
-            href={`/${item.path}`}
-            tabindex="0"
-            data-link={`${item.id}`}
-          >
-            {item.text}
-          </a>
-        </div>
-      ))
-    }
-    <DarkModeSwitcher client:only="react" />
-  </div>
+  <Navigation nav={nav} client:only="react" />
   <div
     class="absolute -bottom-10 left-0 w-full h-10 md:h-18 pointer-events-none bg-linear-to-b from-background via-background/80 to-background/20 z-10"
   >
   </div>
 </header>
-
-<script>
-  const headerLinks = document.getElementById("header-links");
-
-  if (headerLinks) {
-    const linkCollection = headerLinks.getElementsByTagName("a");
-    for (let link of linkCollection) {
-      const linkId = link.dataset.link || "";
-      if (linkId) {
-        link.addEventListener("click", () => {
-          document
-            .getElementById(`${linkId}-details`)
-            ?.setAttribute("open", "true");
-        });
-      }
-    }
-  }
-</script>

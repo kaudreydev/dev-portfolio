@@ -1,5 +1,11 @@
 /* Generic Utilities */
 
+@utility border-visible {
+  @apply border-2 rounded-md;
+
+  border-color: var(--foreground);
+}
+
 @utility font-heading {
   font-family: var(--font-heading);
 }
@@ -23,7 +29,7 @@
 }
 
 @utility credit-content {
-  @apply prose pt-8 px-4 md:px-0 mb-4 mx-auto w-auto max-w-150;
+  @apply prose pt-8 px-4 md:px-0 mb-4 mx-auto w-auto max-w-135;
 
   @variant prose-a {
     @apply text-base text-foreground;
