@@ -34,7 +34,7 @@ export default function Navigation({ nav }: { nav: NavItem[] }) {
   ));
 
   return (
-    <NavigationMenu id="navigation-links" className="min-w-full" value="main">
+    <NavigationMenu id="navigation-links" className="min-w-full">
       <NavigationMenuList className="flex items-end justify-between sm:justify-center gap-5 order-2 px-4">
         {!isSmall ? (
           navItems
