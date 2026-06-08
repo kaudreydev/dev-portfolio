@@ -39,6 +39,16 @@ const nav = [
 </Layout>
 
 <script>
+  const { hash } = window?.location;
+
+  if (hash) {
+    const itemId = hash.substring(1);
+
+    document.getElementById(`${itemId}-details`)?.setAttribute("open", "true");
+  }
+</script>
+
+<script>
   import { userTheme } from "~/store";
 
   const savedTheme = userTheme.get();
