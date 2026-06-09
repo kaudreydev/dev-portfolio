@@ -6,7 +6,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@components/ui/NavigationMenu";
-import DarkModeSwitcher from "@components/utils/DarkModeSwitcher.tsx";
 import { useViewport } from "@uireact/tools";
 import { Menu } from "lucide-react";
 import type { NavItem } from "~/types";
@@ -33,30 +32,42 @@ export default function Navigation({ nav }: { nav: NavItem[] }) {
     </NavigationMenuItem>
   ));
 
-  return (
-    <NavigationMenu id="navigation-links" className="min-w-full">
+  const mobileNav = (
+    <NavigationMenu data-testid="navigation">
       <NavigationMenuList className="flex items-end justify-between sm:justify-center gap-5 order-2 px-4">
-        {!isSmall ? (
-          navItems
-        ) : (
-          <NavigationMenuItem value="main">
-            <NavigationMenuTrigger className="bg-transparent border-visible">
-              <Menu />
-            </NavigationMenuTrigger>
-            <NavigationMenuContent
-              keepMounted={true}
-              className="list-none w-40 p-4 bg-background border-visible"
+        <NavigationMenuItem value="main">
+          <NavigationMenuTrigger
+            data-testid="navigation-trigger"
+            className="bg-transparent border-visible"
+          >
+            <Menu />
+          </NavigationMenuTrigger>
+          <NavigationMenuContent
+            keepMounted={true}
+            className="list-none w-40 p-4 bg-background border-visible"
+          >
+            <NavigationMenuList
+              data-testid="navigation-links"
+              className="flex flex-col m-0 pl-0 items-start"
             >
-              <NavigationMenuList className="flex flex-col m-0 pl-0 items-start">
-                {navItems}
-              </NavigationMenuList>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        )}
-        <NavigationMenuItem>
-          <DarkModeSwitcher />
+              {navItems}
+            </NavigationMenuList>
+          </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
+
+  const desktopNav = (
+    <NavigationMenu data-testid="navigation">
+      <NavigationMenuList
+        data-testid="navigation-links"
+        className="flex items-end justify-between sm:justify-center gap-5 order-2 px-4"
+      >
+        {navItems}
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+
+  return isSmall ? mobileNav : desktopNav;
 }
