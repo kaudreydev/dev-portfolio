@@ -17,11 +17,11 @@ const { nav } = Astro.props as Props;
   <div
     class="flex flex-row justify-between md:justify-center md:my-6 pr-4 md:pr-0 w-full"
   >
-    <Navigation nav={nav} client:only="react" />
+    <Navigation nav={nav} client:load />
     <DarkModeSwitcher client:only="react" />
   </div>
   <div
-    class="absolute -bottom-10 left-0 w-full h-10 md:h-18 pointer-events-none bg-linear-to-b from-background via-background/80 to-background/20 z-10"
+    class="absolute -bottom-8 left-0 w-full h-8 pointer-events-none bg-linear-to-b from-background via-background/80 to-background/20 z-10"
   >
   </div>
 </header>
