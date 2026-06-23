@@ -1,0 +1,78 @@
+/* Generic Utilities */
+
+@utility border-visible {
+  @apply border-2 rounded-md;
+
+  border-color: var(--foreground);
+}
+
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
+
+/* Component Utilities */
+
+@utility back-to-top {
+  /* "dark grey" #494440 */
+  filter: brightness(0) saturate(100%) invert(23%) sepia(7%) saturate(576%)
+    hue-rotate(344deg) brightness(100%) contrast(85%);
+
+  @variant dark {
+    /* "off white" #D6D6D6 */
+    filter: brightness(0) saturate(100%) invert(65%) sepia(83%) saturate(0%)
+      hue-rotate(250deg) brightness(111%) contrast(98%);
+  }
+}
+
+@utility credit-content {
+  @apply prose pt-8 px-4 md:px-0 mb-4 mx-auto w-auto max-w-135;
+
+  @variant prose-a {
+    @apply text-base text-foreground;
+  }
+
+  @variant prose-p {
+    @apply text-base text-foreground text-justify;
+  }
+
+  @variant prose-strong {
+    @apply text-base text-foreground;
+  }
+}
+
+@utility form-field {
+  color: var(--foreground);
+}
+
+@utility icon-link {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--space-3xs);
+  width: fit-content;
+}
+
+@utility skill-years {
+  color: var(--color-pink-dark);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 32px;
+
+  @variant dark {
+    color: var(--color-pink);
+  }
+}
+
+@utility skill-years-md {
+  color: var(--color-pink-dark);
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 64px;
+
+  @variant dark {
+    color: var(--color-pink);
+  }
+}

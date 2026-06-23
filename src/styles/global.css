@@ -5,73 +5,9 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @plugin "@tailwindcss/typography";
+@import "./utilities.css";
 
 @custom-variant dark (&:is(.dark *));
-
-@utility back-to-top {
-  /* "dark grey" #494440 */
-  filter: brightness(0) saturate(100%) invert(23%) sepia(7%) saturate(576%)
-    hue-rotate(344deg) brightness(100%) contrast(85%);
-
-  @variant dark {
-    /* "off white" #D6D6D6 */
-    filter: brightness(0) saturate(100%) invert(65%) sepia(83%) saturate(0%)
-      hue-rotate(250deg) brightness(111%) contrast(98%);
-  }
-}
-
-@utility credit-content {
-  @apply prose pt-8 -mb-24 mx-auto w-200;
-
-  @variant prose-a {
-    @apply text-base text-foreground;
-  }
-
-  @variant prose-p {
-    @apply text-base text-foreground text-center;
-  }
-
-  @variant prose-strong {
-    @apply text-base text-foreground;
-  }
-}
-
-@utility font-heading {
-  font-family: var(--font-heading);
-}
-
-@utility font-body {
-  font-family: var(--font-body);
-}
-
-@utility icon-link {
-  align-items: center;
-  display: inline-flex;
-  gap: var(--space-3xs);
-  width: fit-content;
-}
-
-@utility skill-years {
-  color: var(--color-pink-dark);
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 32px;
-
-  @variant dark {
-    color: var(--color-pink);
-  }
-}
-
-@utility skill-years-md {
-  color: var(--color-pink-dark);
-  font-weight: bold;
-  font-size: 2rem;
-  line-height: 64px;
-
-  @variant dark {
-    color: var(--color-pink);
-  }
-}
 
 @layer global {
   /* Typography */
@@ -81,7 +17,7 @@
     font-family: "Anybody";
     font-style: normal;
     font-weight: 400;
-    src: url("/fonts/anybody-v11-latin-regular.woff2") format("woff2");
+    src: url("/fonts/Anybody-Regular.ttf") format("ttf");
   }
 
   @font-face {
@@ -89,7 +25,15 @@
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    src: url("/fonts/inter-v13-latin-regular.woff2") format("woff2");
+    src: url("/fonts/Inter-Regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    src: url("/fonts/Inter-Bold.woff2") format("woff2");
   }
 
   /* Focus behaviour */
@@ -151,6 +95,10 @@
     hyphens: auto;
   }
 
+  a:link {
+    color: var(--anchor);
+  }
+
   a:visited {
     color: var(--anchor-visited);
   }
@@ -207,6 +155,7 @@
 :root {
   --background: oklch(95.6% 0.045 203.388);
   --foreground: oklch(0.3903 0.0095 61.23);
+  --anchor: oklch(0.4672 0.3026 266.25); /* #1A1AFF */
   --anchor-visited: oklch(0.46 0.2148 301.3);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -243,6 +192,7 @@
 .dark {
   --background: oklch(27.9% 0.041 260.031);
   --foreground: oklch(0.8761 0 0);
+  --anchor: oklch(0.7788 0.1161 283.37); /* #ADADFF */
   --anchor-visited: oklch(0.7802 0.112 307.74);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -322,7 +272,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;

@@ -1,0 +1,100 @@
+- banner:
+  - navigation:
+    - list:
+      - listitem:
+        - link "about":
+          - /url: /#about
+      - listitem:
+        - link "skills":
+          - /url: /#skills
+      - listitem:
+        - link "experience":
+          - /url: /#experience
+      - listitem:
+        - link "projects":
+          - /url: /#projects
+      - listitem:
+        - link "contact":
+          - /url: /#contact
+  - button "dark mode"
+- main:
+  - heading "Kathryn Audrey" [level=1]
+  - heading "About" [level=2]
+  - text: Kathryn Audrey (they/them or she/her)
+  - paragraph:
+    - text: Full-stack software engineer creating beautiful and accessible web apps with a strong focus on user experience. Compassion and care goes into everything I do, and community always comes first
+    - img "Dark Blue Pixel Heart"
+  - list:
+    - listitem:
+      - link "Kathryn Audrey on LinkedIn (external link)":
+        - /url: https://www.linkedin.com/in/kathryn-audrey/
+        - text: ""
+    - listitem:
+      - link "Kathryn Audrey on GitHub (external link)":
+        - /url: https://github.com/kaudreydev
+        - text: ""
+    - listitem:
+      - link "Kathryn Audrey on Codeberg (external link)":
+        - /url: https://codeberg.org/KAudreyDev
+        - text: ""
+    - listitem:
+      - link "Kathryn Audrey on Mastodon (external link)":
+        - /url: https://tech.lgbt/@kaudreydev
+        - text: ""
+  - heading "Skills" [level=2]
+  - group: Skills
+  - heading "Experience" [level=2]
+  - group:
+    - text: Experience
+    - list:
+      - listitem:
+        - text: /Web Developer Consultant - CGI Inc\. \(\d+-\d+\)/
+        - list:
+          - listitem: Contributed to numerous small- and large-scale web applications, both independently and as part of a team.
+          - listitem: Developed front-end and full-stack applications using a variety of technologies including Angular, React, Node.js, and .NET.
+          - listitem: Adapted quickly to meet project timelines, including rapid onboarding for in-flight projects and reprioritization due to changing requirements.
+          - listitem: Refined environment setup processes and created detailed documentation to improve onboarding speed.
+      - listitem:
+        - text: /Advisory Application Developer - CIBC \(\d+-\d+\)/
+        - list:
+          - listitem: Supported and developed components and features for the SharePoint-based intranet platform, including regular deployments, updates, and on-call support.
+          - listitem: Designed and built custom SharePoint-based solutions for internal business partners using JavaScript and Angular.js to create tailored frontend UX.
+          - listitem: Worked directly with key stakeholders to gather requirements, manage projects, develop solutions, and maintain products beyond deployment.
+          - listitem: Contributed to the design and strategy around platform upgrades and enhancements.
+  - heading "Projects" [level=2]
+  - group: Projects
+  - heading "Contact" [level=2]
+  - group: Contact
+  - paragraph:
+    - text: Coded in
+    - link "Visual Studio Code":
+      - /url: https://code.visualstudio.com/
+    - text: by
+    - strong: Kathryn Audrey (KAudreyDev)
+    - text: . Built with
+    - link "Astro":
+      - /url: https://astro.build/
+    - text: and
+    - link "Tailwind CSS":
+      - /url: https://tailwindcss.com/
+    - text: using the
+    - link "Astronaut":
+      - /url: https://astro.build/themes/details/astronaut/
+    - text: starter theme created by
+    - link "Steve Frenzel":
+      - /url: https://stevefrenzel.dev/
+    - text: . Deployed with
+    - link "Vercel":
+      - /url: https://vercel.com/
+    - text: . Paragraph text set in the
+    - link "Inter":
+      - /url: https://rsms.me/inter/
+    - text: typeface, while headings use
+    - link "Anybody":
+      - /url: https://etceteratype.co/pages/anybody
+    - text: .
+  - paragraph: Lovingly created by a real human without the use of AI agents or tools.
+- region "Utilities":
+  - link "Back to top":
+    - /url: "#start"
+    - img "Back to top"

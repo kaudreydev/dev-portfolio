@@ -20,6 +20,7 @@ export default function SkillSort({
   return (
     <div className="w-full max-w-48">
       <NativeSelect
+        id="skill-card-sort"
         value={sortValue}
         onChange={(e) => valueChanged(e.currentTarget.value)}
       >

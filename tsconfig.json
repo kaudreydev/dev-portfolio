@@ -10,6 +10,7 @@
       "@images/*": ["./src/images/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@lib/*": ["./src/lib/*"],
+      "@pages/*": ["./src/pages/*"],
       "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/components/utils/*"]
     },

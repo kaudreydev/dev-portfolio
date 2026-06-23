@@ -1,0 +1,137 @@
+- banner:
+  - navigation:
+    - list:
+      - listitem:
+        - link "about":
+          - /url: /#about
+      - listitem:
+        - link "skills":
+          - /url: /#skills
+      - listitem:
+        - link "experience":
+          - /url: /#experience
+      - listitem:
+        - link "projects":
+          - /url: /#projects
+      - listitem:
+        - link "contact":
+          - /url: /#contact
+  - button "dark mode"
+- main:
+  - heading "Kathryn Audrey" [level=1]
+  - heading "About" [level=2]
+  - text: Kathryn Audrey (they/them or she/her)
+  - paragraph:
+    - text: Full-stack software engineer creating beautiful and accessible web apps with a strong focus on user experience. Compassion and care goes into everything I do, and community always comes first
+    - img "Dark Blue Pixel Heart"
+  - list:
+    - listitem:
+      - link "Kathryn Audrey on LinkedIn (external link)":
+        - /url: https://www.linkedin.com/in/kathryn-audrey/
+        - text: ""
+    - listitem:
+      - link "Kathryn Audrey on GitHub (external link)":
+        - /url: https://github.com/kaudreydev
+        - text: ""
+    - listitem:
+      - link "Kathryn Audrey on Codeberg (external link)":
+        - /url: https://codeberg.org/KAudreyDev
+        - text: ""
+    - listitem:
+      - link "Kathryn Audrey on Mastodon (external link)":
+        - /url: https://tech.lgbt/@kaudreydev
+        - text: ""
+  - heading "Skills" [level=2]
+  - group:
+    - text: "Skills Sort by:"
+    - combobox:
+      - option "Alphabetical"
+      - option "Experience"
+      - option "Proficiency" [selected]
+    - img "JavaScript icon"
+    - text: JavaScript
+    - img "Skill Level Expert"
+    - text: /Expert \d+\+ Years/
+    - img "HTML icon"
+    - text: HTML
+    - img "Skill Level Expert"
+    - text: /Expert \d+\+ Years/
+    - img "CSS icon"
+    - text: CSS
+    - img "Skill Level Expert"
+    - text: /Expert \d+\+ Years/
+    - img "TypeScript icon"
+    - text: TypeScript
+    - img "Skill Level Expert"
+    - text: /Expert \d+\+ Years/
+    - img "Node.js icon"
+    - text: Node.js
+    - img "Skill Level Proficient"
+    - text: /Skilled \d+\+ Years/
+    - img "Git icon"
+    - text: Git
+    - img "Skill Level Proficient"
+    - text: /Skilled \d+\+ Years/
+    - img "Angular icon"
+    - text: Angular
+    - img "Skill Level Proficient"
+    - text: Skilled 6+ Years
+    - img "React icon"
+    - text: React
+    - img "Skill Level Proficient"
+    - text: Skilled 5+ Years
+    - img "Next.js icon"
+    - text: Next.js
+    - img "Skill Level Proficient"
+    - text: Skilled 4+ Years
+    - img "Docker icon"
+    - text: Docker
+    - img "Skill Level Growing"
+    - text: Growing 3+ Years
+    - img ".NET icon"
+    - text: .NET
+    - img "Skill Level Growing"
+    - text: Growing 3+ Years
+    - img "Astro icon"
+    - text: Astro
+    - img "Skill Level Familiar"
+    - text: Familiar <1 Years
+  - heading "Experience" [level=2]
+  - group: Experience
+  - heading "Projects" [level=2]
+  - group: Projects
+  - heading "Contact" [level=2]
+  - group: Contact
+  - paragraph:
+    - text: Coded in
+    - link "Visual Studio Code":
+      - /url: https://code.visualstudio.com/
+    - text: by
+    - strong: Kathryn Audrey (KAudreyDev)
+    - text: . Built with
+    - link "Astro":
+      - /url: https://astro.build/
+    - text: and
+    - link "Tailwind CSS":
+      - /url: https://tailwindcss.com/
+    - text: using the
+    - link "Astronaut":
+      - /url: https://astro.build/themes/details/astronaut/
+    - text: starter theme created by
+    - link "Steve Frenzel":
+      - /url: https://stevefrenzel.dev/
+    - text: . Deployed with
+    - link "Vercel":
+      - /url: https://vercel.com/
+    - text: . Paragraph text set in the
+    - link "Inter":
+      - /url: https://rsms.me/inter/
+    - text: typeface, while headings use
+    - link "Anybody":
+      - /url: https://etceteratype.co/pages/anybody
+    - text: .
+  - paragraph: Lovingly created by a real human without the use of AI agents or tools.
+- region "Utilities":
+  - link "Back to top":
+    - /url: "#start"
+    - img "Back to top"

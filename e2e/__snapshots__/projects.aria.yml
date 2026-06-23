@@ -1,0 +1,140 @@
+- banner:
+  - navigation:
+    - list:
+      - listitem:
+        - link "about":
+          - /url: /#about
+      - listitem:
+        - link "skills":
+          - /url: /#skills
+      - listitem:
+        - link "experience":
+          - /url: /#experience
+      - listitem:
+        - link "projects":
+          - /url: /#projects
+      - listitem:
+        - link "contact":
+          - /url: /#contact
+  - button "dark mode"
+- main:
+  - heading "Kathryn Audrey" [level=1]
+  - heading "About" [level=2]
+  - text: Kathryn Audrey (they/them or she/her)
+  - paragraph:
+    - text: Full-stack software engineer creating beautiful and accessible web apps with a strong focus on user experience. Compassion and care goes into everything I do, and community always comes first
+    - img "Dark Blue Pixel Heart"
+  - list:
+    - listitem:
+      - link "Kathryn Audrey on LinkedIn (external link)":
+        - /url: https://www.linkedin.com/in/kathryn-audrey/
+        - text: ""
+    - listitem:
+      - link "Kathryn Audrey on GitHub (external link)":
+        - /url: https://github.com/kaudreydev
+        - text: ""
+    - listitem:
+      - link "Kathryn Audrey on Codeberg (external link)":
+        - /url: https://codeberg.org/KAudreyDev
+        - text: ""
+    - listitem:
+      - link "Kathryn Audrey on Mastodon (external link)":
+        - /url: https://tech.lgbt/@kaudreydev
+        - text: ""
+  - heading "Skills" [level=2]
+  - group: Skills
+  - heading "Experience" [level=2]
+  - group: Experience
+  - heading "Projects" [level=2]
+  - group:
+    - text: Projects
+    - list:
+      - listitem:
+        - text: /Asset Tracker Application Rewrite for Oil & Gas Client CGI \(\d+-\d+\) Azure DevOps C#\/\.NET Next\.js React SQL/
+        - list:
+          - listitem: Designed modernization of existing Asset Tracker application previously built on MS Access.
+          - listitem: Updated application would be built using React and Next.js with a .NET API and Oracle DB.
+          - listitem: Application designed from the ground-up to utilize a fresh UI design using Material UI and React.
+          - listitem: Converted React project template to use Next.js with authentication via Graph API and Azure.
+      - listitem:
+        - text: /Asset Search Application \(Phase 2\) for Oil & Gas Client CGI \(\d+\) Azure DevOps Elasticsearch Node\.js React SQL/
+        - list:
+          - listitem: Contributed to the second phase of Asset Search application using Angular and Node.js with data via Denodo views using SQL queries and compiled into Elasticsearch.
+          - listitem: Joined the project while underway after sudden departure of previous developer and was required to get up to speed and begin work almost immediately.
+          - listitem: In addition to expanding the UI and available data, also worked to simplify and streamline the development process by creating tailored Node.js and PowerShell scripts and performing a detailed analysis and remediation of the environment setup process.
+      - listitem:
+        - text: /End-User Search Tool for Canadian Government Client CGI \(\d+\) Agile Next\.js React/
+        - list:
+          - listitem: During conceptualization phase of the project, worked to create TypeScript definitions for a component library and initial application design and structure using Next.js.
+          - listitem: Participated in and contributed to discussions on project direction and product purpose, paying special attention to accessibility requirements and ensuring any product we built would be useful to all Canadians, not just the majority.
+          - listitem: Engaged in collaborative activities and team building exercises according to Agile development methodology to ensure opportunities for input from all project personnel.
+      - listitem:
+        - text: /Automated Testing Tool for Canadian Government Client CGI \(\d+-\d+\) Accessibility Agile/
+        - list:
+          - listitem: Worked extensively to develop robust user interface screens, allowing non-technical personnel to perform automated testing of other products and applications through a streamlined workflow.
+          - listitem: Established development approach and overall code structure, providing the direction and design methodology for all front-end development on the project.
+          - listitem: Offered input on application design and standards regarding accessibility and user experience.
+          - listitem: Created core component library based on standards to help keep codebase consistent, utilizing WET/BOEWS and GCWeb, the Canadian government standard for all web-based interfaces
+      - listitem:
+        - text: /Financial Exchange Application for Canadian Government Client CGI \(\d+-\d+\) Agile Angular Docker GitHub Enterprise Jenkins PostgreSQL/
+        - list:
+          - listitem: Contributed to the development of a large-scale web application for a Canadian government client, utilizing a variety of technologies such as Angular, Docker, GitHub Enterprise, and Jenkins.
+          - listitem: The application was designed to facilitate financial exchanges between financial institutions and government corporations using an elaborate, user-friendly interface.
+          - listitem: Project work was coordinated using the Agile development methodology, and a robust DevOps pipeline ensured seamless delivery and deployment of project features and iterations.
+      - listitem:
+        - text: /Application Workflow for Enterprise Delivery Framework CIBC \(\d+-\d+\) SharePoint/
+        - list:
+          - listitem: Designed and implemented an application workflow using SharePoint to support the Enterprise Delivery Framework (EDF) for project management and delivery.
+          - listitem: The workflow facilitated the tracking and management of project deliverables, milestones, and approvals, improving visibility and accountability across project teams and stakeholders.
+          - listitem: The project involved extensive and detailed analysis of existing data and data collection methodology for the purposes of classifying and typifying content across the application.
+      - listitem:
+        - text: /Mobile-First Social Media Web App CIBC \(\d+-\d+\) Agile AngularJS CSS JavaScript SharePoint/
+        - list:
+          - listitem: Led the development of a mobile-first social media web application for employees to share news, updates, and collaborate on projects.
+          - listitem: Utilized AngularJS for the frontend development and integrated with the SharePoint backend to leverage existing infrastructure and content management capabilities.
+          - listitem: Targeted platforms included iOS and BlackBerry devices used by corporate executives and senior management.
+      - listitem:
+        - text: /SharePoint Intranet Platform Support CIBC \(\d+-\d+\) C#\/\.NET JavaScript SharePoint/
+        - list:
+          - listitem: Provided ongoing support and maintenance for the company's SharePoint intranet platform, ensuring its stability, security, and performance.
+          - listitem: Developed custom solutions and features to enhance the functionality of the intranet and meet the evolving needs of internal business partners.
+      - listitem:
+        - text: /Outside Activities CIBC \(\d+\) Excel JavaScript SharePoint Visual Basic/
+        - list:
+          - listitem: Modified SharePoint forms using JavaScript to simplify and streamline the data entry process for employees submitting outside activity requests for approval.
+          - listitem: Created scripts to automate the import of Excel data previously used by the Compliance department to track and manage outside activity requests, improving data accuracy and reducing manual effort.
+  - heading "Contact" [level=2]
+  - group: Contact
+  - paragraph:
+    - text: Coded in
+    - link "Visual Studio Code":
+      - /url: https://code.visualstudio.com/
+    - text: by
+    - strong: Kathryn Audrey (KAudreyDev)
+    - text: . Built with
+    - link "Astro":
+      - /url: https://astro.build/
+    - text: and
+    - link "Tailwind CSS":
+      - /url: https://tailwindcss.com/
+    - text: using the
+    - link "Astronaut":
+      - /url: https://astro.build/themes/details/astronaut/
+    - text: starter theme created by
+    - link "Steve Frenzel":
+      - /url: https://stevefrenzel.dev/
+    - text: . Deployed with
+    - link "Vercel":
+      - /url: https://vercel.com/
+    - text: . Paragraph text set in the
+    - link "Inter":
+      - /url: https://rsms.me/inter/
+    - text: typeface, while headings use
+    - link "Anybody":
+      - /url: https://etceteratype.co/pages/anybody
+    - text: .
+  - paragraph: Lovingly created by a real human without the use of AI agents or tools.
+- region "Utilities":
+  - link "Back to top":
+    - /url: "#start"
+    - img "Back to top"

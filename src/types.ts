@@ -1,4 +1,32 @@
+import type { verify } from "altcha-lib/frameworks/shared";
+import type {
+  AltchaMiddlewareOptions,
+  AltchaResult,
+} from "altcha-lib/frameworks/types";
+import type { APIContext } from "astro";
 import z from "astro/zod";
+
+/** Library Types */
+
+export type Altcha = {
+  challengeHandler: (_req: AltchaRequest) => Promise<Response>;
+  withMiddleware: (
+    handler: (req: AltchaRequest) => Promise<Response> | Response,
+    options?: AltchaMiddlewareOptions,
+  ) => (req: AltchaRequest) => Promise<Response>;
+  verifyHandler: (context: APIContext) => Promise<Response>;
+  getPayloadFromRequest: (
+    req: AltchaRequest,
+    cookieName?: string,
+  ) => Promise<string | undefined>;
+  middleware: (
+    req: AltchaRequest,
+    throwOnFailure?: boolean,
+  ) => Promise<Response | AltchaResult>;
+  verify: typeof verify;
+};
+
+export type AltchaRequest = Request & { __altcha: AltchaResult };
 
 /** Input Types */
 

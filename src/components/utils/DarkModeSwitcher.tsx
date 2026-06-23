@@ -44,13 +44,16 @@ export default function DarkModeSwitcher() {
   }, [isDarkMode]);
 
   return (
-    <button
-      id="dark-mode-switcher"
-      onClick={toggleDarkMode}
-      className="cursor-pointer text-[2rem] md:text-[1.8rem] bg-transparent border-0 leading-6 pt-1"
-      title={`switch to ${isDarkMode ? "light" : "dark"} mode`}
-    >
-      {isDarkMode ? <Moon /> : <Sun />}
-    </button>
+    <div className="my-6.25">
+      <button
+        id="dark-mode-switcher"
+        aria-label={`${isDarkMode ? "light" : "dark"} mode`}
+        onClick={toggleDarkMode}
+        className="cursor-pointer text-[2rem] md:text-[1.8rem] bg-transparent border-0 leading-9 my-2"
+        title={`switch to ${isDarkMode ? "light" : "dark"} mode`}
+      >
+        {isDarkMode ? <Moon /> : <Sun />}
+      </button>
+    </div>
   );
 }

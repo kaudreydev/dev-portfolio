@@ -8,12 +8,16 @@ import {
   Textarea,
 } from "@components/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
+import "altcha";
 import { actions } from "astro:actions";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { contactMessage, type ContactMessage } from "~/types";
+import Altcha from "./Altcha";
+import type { AltchaResult } from "altcha-lib/frameworks/types";
 
 export default function ContactForm() {
+  const [altcha, setAltcha] = useState<string | null>(null);
   const [error, setError] = useState<boolean>(false);
   const [sending, setSending] = useState<boolean>(false);
   const [sent, setSent] = useState<boolean>(false);
@@ -33,6 +37,24 @@ export default function ContactForm() {
     setSending(true);
 
     try {
+      /* Begin Altcha verification */
+
+      // Verify the solution
+      if (!altcha) throw new Error("Altcha not completed");
+
+      const { verification } = (await fetch("/verify", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ altcha }),
+      }).then((value: Response) => value.json())) as AltchaResult;
+
+      if (!verification || !verification.verified) {
+        throw new Error("Verification failed");
+      }
+      /** End Altcha verification */
+
       const result = await actions.send(formData);
 
       if (!!result.data) setSent(true);
@@ -42,6 +64,8 @@ export default function ContactForm() {
     } finally {
       setSending(false);
     }
+
+    return formData;
   };
 
   const formJsx = (
@@ -58,6 +82,7 @@ export default function ContactForm() {
                   {...field}
                   id="contact-form-name"
                   name="contact-form-name"
+                  className="form-field"
                   required
                   aria-required="true"
                   aria-invalid={fieldState.invalid}
@@ -84,6 +109,7 @@ export default function ContactForm() {
                   id="contact-form-email"
                   name="contact-form-email"
                   type="email"
+                  className="form-field"
                   required
                   aria-required="true"
                   aria-invalid={fieldState.invalid}
@@ -109,6 +135,7 @@ export default function ContactForm() {
                   {...field}
                   id="contact-form-subject"
                   name="contact-form-subject"
+                  className="form-field"
                   aria-invalid={fieldState.invalid}
                   placeholder="Web Work Opportunity"
                   autoComplete="off"
@@ -130,7 +157,7 @@ export default function ContactForm() {
                   {...field}
                   id="contact-form-message"
                   name="contact-form-message"
-                  className="min-h-24"
+                  className="min-h-24 form-field"
                   required
                   aria-required="true"
                   aria-invalid={fieldState.invalid}
@@ -144,10 +171,13 @@ export default function ContactForm() {
               </Field>
             )}
           />
+          {/* ALTCHA WebComponent */}
+          <Altcha setAltcha={setAltcha} />
           <Button
             name="contact-form-submit"
             type="submit"
             disabled={sending}
+            aria-disabled={sending}
             className="w-16 ml-auto"
           >
             Send

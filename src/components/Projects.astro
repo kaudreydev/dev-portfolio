@@ -14,25 +14,24 @@ const allProjects = chain(projectsCollection)
   .value();
 ---
 
+<h2 id="projects" class="md:-mt-8 sr-only">Projects</h2>
 <details id="projects-details" class="w-full">
-  <summary id="projects" class="text-4xl py-8"
-    ><h2 class="inline text-4xl">Projects</h2></summary
-  >
+  <summary class="text-4xl py-8">
+    <span class="inline font-heading">Projects</span>
+  </summary>
   <div id="projects-content" class="-mt-8">
     <ul class="list-none pl-4">
       {
         allProjects.map((project: Project) => (
           <li class="py-2">
-            <b class="text-xl md:text-2xl">
-              {project.name} - {project.company}
-            </b>
-            <span>({project.years})</span>
-            <ul class="py-2 pl-4 md:pl-8">
-              {project.details.map((detail: string) => (
-                <li class="text-lg py-1">{detail}</li>
-              ))}
-            </ul>
-            <div class="flex flex-wrap gap-2 pl-0 md:pl-8">
+            <div>
+              <b class="text-xl md:text-2xl">{project.name}</b>
+              <br />
+              <span class="text-lg md:text-xl">
+                {project.company} ({project.years})
+              </span>
+            </div>
+            <div class="flex flex-wrap gap-2 pl-0 md:pl-4 pt-2">
               {chain(project.technologies)
                 .sort()
                 .map((tech: Technology) => (
@@ -44,6 +43,11 @@ const allProjects = chain(projectsCollection)
                   </Badge>
                 ))}
             </div>
+            <ul class="py-2 pl-4 md:pl-8">
+              {project.details.map((detail: string) => (
+                <li class="text-lg py-1">{detail}</li>
+              ))}
+            </ul>
           </li>
         ))
       }

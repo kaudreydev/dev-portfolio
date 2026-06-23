@@ -44,6 +44,12 @@ SITE_URL=https://yoursite.url/
 
 Feel free to customize the e-mail settings or format as you see fit!
 
+# Testing
+
+Currently only E2E tests are available, covering snapshots, navigation, and the dark mode switcher. I found it difficult to test Astro and React together, and since most of the site is static content anyway, I felt snapshots would be largely sufficient.
+
+E2E testing uses [Playwright](https://playwright.dev) and can be run with the command `pnpm e2e`. The navigation tests can be a bit flakey in the default headless mode, so I recommend running with the `--ui` flag.
+
 # Credits
 
 - Site developed using the [Astronaut](https://astro.build/themes/details/astronaut/) theme for Astro created by [Steve Frenzel](https://www.stevefrenzel.dev)
