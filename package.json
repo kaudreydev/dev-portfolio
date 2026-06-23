@@ -3,12 +3,12 @@
   "type": "module",
   "version": "1.1.0",
   "engines": {
-    "node": "24.17.0",
-    "npm": "11.12.1",
-    "pnpm": "11.8.0",
+    "node": "24",
+    "npm": "11",
+    "pnpm": "11",
     "runtime": {
       "name": "node",
-      "version": "^24.17.0",
+      "version": "^24",
       "onFail": "download"
     }
   },
@@ -80,7 +80,7 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "^24.17.0",
+      "version": "^24.16.0",
       "onFail": "download"
     }
   }
