@@ -47,6 +47,7 @@ export default function DarkModeSwitcher() {
     <div className="my-6.25">
       <button
         id="dark-mode-switcher"
+        aria-label={`${isDarkMode ? "light" : "dark"} mode`}
         onClick={toggleDarkMode}
         className="cursor-pointer text-[2rem] md:text-[1.8rem] bg-transparent border-0 leading-9 my-2"
         title={`switch to ${isDarkMode ? "light" : "dark"} mode`}
