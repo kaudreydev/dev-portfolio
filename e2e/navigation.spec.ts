@@ -1,9 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-const homeUrl = "http://localhost:4321/";
-
 test.beforeEach(async ({ page }) => {
-  await page.goto(homeUrl);
+  await page.goto("/");
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 });
 
