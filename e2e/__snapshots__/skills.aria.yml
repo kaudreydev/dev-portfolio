@@ -16,8 +16,7 @@
       - listitem:
         - link "contact":
           - /url: /#contact
-      - listitem:
-        - button "switch to dark mode"
+  - button "dark mode"
 - main:
   - heading "Kathryn Audrey" [level=1]
   - heading "About" [level=2]
