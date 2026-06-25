@@ -57,8 +57,10 @@ export default function ContactForm() {
 
       const result = await actions.send(formData);
 
-      if (!!result.data) setSent(true);
-      else setError(true);
+      if (!!result.data) {
+        cookieStore.delete("altcha");
+        setSent(true);
+      } else setError(true);
     } catch (error) {
       console.error(error);
     } finally {

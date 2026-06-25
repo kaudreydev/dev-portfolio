@@ -1,6 +1,7 @@
 import { CappedMap, randomInt } from "altcha-lib";
 import { deriveKey } from "altcha-lib/algorithms/pbkdf2";
 import { deriveHmacKeySecret } from "altcha-lib/frameworks/shared";
+import type { CreateChallengeOptions } from "altcha/types";
 import type { Altcha } from "~/types";
 import { create } from "./altcha-astro";
 
@@ -12,21 +13,24 @@ const HMAC_SECRET = import.meta.env.HMAC_SECRET;
  * https://github.com/altcha-org/altcha-lib/blob/main/docs/nextjs.md
  */
 
+// Adjust cost and counter depending on the algorithm
+type ChallengeParameters = Pick<CreateChallengeOptions, "algorithm" | "cost"> &
+  Partial<CreateChallengeOptions>;
+
+const defaultChallengeParams = {
+  algorithm: "PBKDF2/SHA-256",
+  cost: 1_000, // challenge complexity
+  counter: randomInt(5_000, 10_000), // iterations required
+  // expiresAt: new Date(Date.now() + 600_000), // 10 minutes
+} as ChallengeParameters;
+
 export const altcha = create({
   // Verification HMAC secrets
   hmacSignatureSecret: HMAC_SECRET,
   hmacKeySignatureSecret: await deriveHmacKeySecret(HMAC_SECRET),
 
   // Adjust challenge parameters
-  createChallengeParameters: () => {
-    return {
-      algorithm: "PBKDF2/SHA-256",
-      // Adjust cost and counter depending on the algorithm
-      cost: 5_000,
-      counter: randomInt(5_000, 10_000),
-      expiresAt: new Date(Date.now() + 600_000), // 10 minutes
-    };
-  },
+  createChallengeParameters: () => defaultChallengeParams,
 
   // Key derivation function for the selected algorithm
   deriveKey,
@@ -35,6 +39,7 @@ export const altcha = create({
   setCookie: {
     name: "altcha",
     path: "/",
+    maxAge: 600,
   },
 
   // In distributed environments, use Redis or another shared store
