@@ -14,7 +14,7 @@ async function sendToOwner({
   subject,
   message,
 }: ContactMessage): Promise<CreateEmailResponseSuccess> {
-  const { data, error } = await resend.emails.send({
+  const emailToOwner = {
     from: emailSite,
     to: emailOwner,
     replyTo: email,
@@ -26,7 +26,11 @@ async function sendToOwner({
             <b>Subject:</b> ${subject}<br />
             <b>Message:</b> <p>"${message}"</p>
         `,
-  });
+  };
+
+  console.log("E-mail to Owner: ", emailToOwner);
+
+  const { data, error } = await resend.emails.send(emailToOwner);
 
   if (error) {
     console.error("OwnerMail Failed: ", error.message);
@@ -44,7 +48,7 @@ async function sendToSender({
   name,
   email,
 }: ContactMessage): Promise<CreateEmailResponseSuccess> {
-  const { data, error } = await resend.emails.send({
+  const emailToSender = {
     from: emailSite,
     to: email,
     replyTo: emailOwner,
@@ -62,7 +66,11 @@ async function sendToSender({
         ${emailOwner}<br />
         https://kaudrey.dev/
           `,
-  });
+  };
+
+  console.log("E-mail to Sender: ", emailToSender);
+
+  const { data, error } = await resend.emails.send(emailToSender);
 
   if (error) {
     console.error("SenderMail Failed: ", error.message);
