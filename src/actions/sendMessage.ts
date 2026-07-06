@@ -38,6 +38,8 @@ async function sendToOwner({
       code: "BAD_REQUEST",
       message: error.message,
     });
+  } else {
+    console.log("E-mail sent to Owner! Data: ", data);
   }
 
   return data;
@@ -78,6 +80,8 @@ async function sendToSender({
       code: "BAD_REQUEST",
       message: error.message,
     });
+  } else {
+    console.log("E-mail sent to Sender! Data: ", data);
   }
 
   return data;
