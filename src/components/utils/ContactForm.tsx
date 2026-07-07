@@ -55,7 +55,14 @@ export default function ContactForm() {
       }
       /** End Altcha verification */
 
-      const result = await actions.send(formData);
+      // const result = await actions.send(formData);
+      const result = await fetch("/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ formData }),
+      }).then((value: Response) => value.json());
 
       if (!!result.data) {
         cookieStore.delete("altcha");

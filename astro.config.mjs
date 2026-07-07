@@ -7,7 +7,7 @@ import { loadEnv } from "vite";
 
 let adapter = vercel({
   isr: {
-    exclude: ["/challenge", "/verify", "/_actions/send/"],
+    exclude: ["/challenge", "/verify", "/send"],
   },
 });
 

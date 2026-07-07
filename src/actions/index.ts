@@ -3,9 +3,9 @@ import { contactMessage } from "~/types";
 import { sendMessage } from "./sendMessage";
 
 export const server = {
-  send: defineAction({
-    accept: "json",
-    input: contactMessage,
-    handler: sendMessage,
-  }),
+  // send: defineAction({
+  //   accept: "json",
+  //   input: contactMessage,
+  //   handler: sendMessage,
+  // }),
 };
