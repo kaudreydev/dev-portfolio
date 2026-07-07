@@ -5,7 +5,11 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
 
-let adapter = vercel({ isr: true });
+let adapter = vercel({
+  isr: {
+    exclude: [/^\/api\/*/],
+  },
+});
 
 if (process.argv[3] === "--node" || process.argv[4] === "--node") {
   adapter = node({ mode: "standalone" });

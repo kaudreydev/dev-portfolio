@@ -9,12 +9,11 @@ import {
 } from "@components/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import "altcha";
-import { actions } from "astro:actions";
+import type { AltchaResult } from "altcha-lib/frameworks/types";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { contactMessage, type ContactMessage } from "~/types";
 import Altcha from "./Altcha";
-import type { AltchaResult } from "altcha-lib/frameworks/types";
 
 export default function ContactForm() {
   const [altcha, setAltcha] = useState<string | null>(null);
@@ -42,7 +41,7 @@ export default function ContactForm() {
       // Verify the solution
       if (!altcha) throw new Error("Altcha not completed");
 
-      const { verification } = (await fetch("/verify", {
+      const { verification } = (await fetch("/api/verify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -55,7 +54,14 @@ export default function ContactForm() {
       }
       /** End Altcha verification */
 
-      const result = await actions.send(formData);
+      // const result = await actions.send(formData);
+      const result = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ formData }),
+      }).then((value: Response) => value.json());
 
       if (!!result.data) {
         cookieStore.delete("altcha");

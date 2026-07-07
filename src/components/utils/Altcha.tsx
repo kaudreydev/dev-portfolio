@@ -69,7 +69,7 @@ function Altcha({
   return (
     <altcha-widget
       ref={widgetRef}
-      challenge="/challenge"
+      challenge="/api/challenge"
       display="standard"
       type="native"
       style={$userTheme === "dark" ? widgetDarkTheme : widgetLightTheme}

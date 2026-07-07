@@ -1,4 +1,3 @@
-import { ActionError } from "astro:actions";
 import { Resend, type CreateEmailResponseSuccess } from "resend";
 import { type ContactMessage } from "~/types";
 
@@ -14,7 +13,7 @@ async function sendToOwner({
   subject,
   message,
 }: ContactMessage): Promise<CreateEmailResponseSuccess> {
-  const { data, error } = await resend.emails.send({
+  const emailToOwner = {
     from: emailSite,
     to: emailOwner,
     replyTo: email,
@@ -26,14 +25,17 @@ async function sendToOwner({
             <b>Subject:</b> ${subject}<br />
             <b>Message:</b> <p>"${message}"</p>
         `,
-  });
+  };
+
+  console.log("E-mail to Owner: ", emailToOwner);
+
+  const { data, error } = await resend.emails.send(emailToOwner);
 
   if (error) {
     console.error("OwnerMail Failed: ", error.message);
-    throw new ActionError({
-      code: "BAD_REQUEST",
-      message: error.message,
-    });
+    throw new Error(error.message);
+  } else {
+    console.log("E-mail sent to Owner! Data: ", data);
   }
 
   return data;
@@ -44,7 +46,7 @@ async function sendToSender({
   name,
   email,
 }: ContactMessage): Promise<CreateEmailResponseSuccess> {
-  const { data, error } = await resend.emails.send({
+  const emailToSender = {
     from: emailSite,
     to: email,
     replyTo: emailOwner,
@@ -62,14 +64,17 @@ async function sendToSender({
         ${emailOwner}<br />
         https://kaudrey.dev/
           `,
-  });
+  };
+
+  console.log("E-mail to Sender: ", emailToSender);
+
+  const { data, error } = await resend.emails.send(emailToSender);
 
   if (error) {
     console.error("SenderMail Failed: ", error.message);
-    throw new ActionError({
-      code: "BAD_REQUEST",
-      message: error.message,
-    });
+    throw new Error(error.message);
+  } else {
+    console.log("E-mail sent to Sender! Data: ", data);
   }
 
   return data;
@@ -79,5 +84,5 @@ export const sendMessage = async (messageData: ContactMessage) => {
   const ownerResult = await sendToOwner(messageData);
   const senderResult = await sendToSender(messageData);
 
-  return ownerResult && senderResult;
+  return [ownerResult, senderResult];
 };
