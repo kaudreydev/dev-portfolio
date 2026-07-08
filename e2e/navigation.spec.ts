@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
   await page.goto("/");
@@ -10,7 +10,7 @@ test("navigation is visible", async ({ page }) => {
 });
 
 test("navigation is correct", async ({ page }) => {
-  const navLinkCollection = await page
+  const navLinkCollection = page
     .getByTestId("navigation-links")
     .getByRole("listitem");
 
@@ -27,7 +27,7 @@ test("navigation is correct", async ({ page }) => {
 
 const anchors = ["about", "skills", "experience", "projects", "contact"];
 
-const anchorTests = anchors.map((anchor: string, index: number) => {
+const anchorTests = anchors.map((anchor: string) => {
   return new Promise((resolve: (value?: any) => void) => {
     test(`navigation link - ${anchor}`, async ({ page }) => {
       const navLink = page.locator("a", { hasText: anchor });
