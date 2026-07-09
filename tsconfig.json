@@ -12,6 +12,7 @@
       "@lib/*": ["./src/lib/*"],
       "@pages/*": ["./src/pages/*"],
       "@styles/*": ["./src/styles/*"],
+      "@templates/*": ["./src/templates/*"],
       "@utils/*": ["./src/components/utils/*"]
     },
     "jsx": "react-jsx",

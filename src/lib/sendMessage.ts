@@ -1,3 +1,6 @@
+import htmlReplace from "@lib/html-replace";
+import emailTemplateOwner from "@templates/emailOwner.html?raw";
+import emailTemplateSender from "@templates/emailSender.html?raw";
 import { Resend, type CreateEmailResponseSuccess } from "resend";
 import { type ContactMessage } from "~/types";
 
@@ -10,7 +13,7 @@ const emailOwner = import.meta.env.EMAIL_OWNER;
 async function sendToOwner({
   name,
   email,
-  subject,
+  subject = "<No Subject>",
   message,
 }: ContactMessage): Promise<CreateEmailResponseSuccess> {
   const emailToOwner = {
@@ -18,13 +21,13 @@ async function sendToOwner({
     to: emailOwner,
     replyTo: email,
     subject: `Profile Contact Message From ${name} - "${subject}"`,
-    html: `
-            <b>Name:</b> ${name}<br />
-            <b>E-mail:</b> ${email}<br />
-            <br />
-            <b>Subject:</b> ${subject}<br />
-            <b>Message:</b> <p>"${message}"</p>
-        `,
+    html: htmlReplace(
+      emailTemplateOwner,
+      name,
+      email,
+      subject,
+      message.replaceAll("\n", "<br />"),
+    ),
   };
 
   console.log("E-mail to Owner: ", emailToOwner);
@@ -45,25 +48,20 @@ async function sendToOwner({
 async function sendToSender({
   name,
   email,
+  message,
 }: ContactMessage): Promise<CreateEmailResponseSuccess> {
   const emailToSender = {
     from: emailSite,
     to: email,
     replyTo: emailOwner,
     subject: `Thanks for contacting KAudreyDev!`,
-    html: `
-        Hi ${name}, thanks for reaching out!<br />
-        <br />  
-        Your message has been received. You can reply to this e-mail if you have anything else you'd like to add.<br />
-        I'll be sure to get back to you within 24-48 hours. Talk to you soon!<br />
-        <br />
-        Kind regards,<br />
-        <br />
-        Kathryn Audrey (KAudreyDev)<br />
-        Full-Stack Software Engineer<br />
-        ${emailOwner}<br />
-        https://kaudrey.dev/
-          `,
+    html: htmlReplace(
+      emailTemplateSender,
+      name,
+      emailOwner,
+      new Date(Date.now()).toString(),
+      message.replaceAll("\n", "<br />"),
+    ),
   };
 
   console.log("E-mail to Sender: ", emailToSender);
