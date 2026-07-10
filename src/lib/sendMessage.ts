@@ -13,19 +13,19 @@ const emailOwner = import.meta.env.EMAIL_OWNER;
 async function sendToOwner({
   name,
   email,
-  subject = "<No Subject>",
+  subject,
   message,
 }: ContactMessage): Promise<CreateEmailResponseSuccess> {
   const emailToOwner = {
     from: emailSite,
     to: emailOwner,
     replyTo: email,
-    subject: `Profile Contact Message From ${name} - "${subject}"`,
+    subject: `Profile Contact Message From ${name} - ${subject ? `"${subject}"` : "(No Subject)"}`,
     html: htmlReplace(
       emailTemplateOwner,
       name,
       email,
-      subject,
+      subject || "(No Subject)",
       message.replaceAll("\n", "<br />"),
     ),
   };
@@ -48,6 +48,7 @@ async function sendToOwner({
 async function sendToSender({
   name,
   email,
+  subject,
   message,
 }: ContactMessage): Promise<CreateEmailResponseSuccess> {
   const emailToSender = {
@@ -60,6 +61,7 @@ async function sendToSender({
       name,
       emailOwner,
       new Date(Date.now()).toString(),
+      subject ? `&quot;${subject}&quot;` : "(No Subject)",
       message.replaceAll("\n", "<br />"),
     ),
   };
