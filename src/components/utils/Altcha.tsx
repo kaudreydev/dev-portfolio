@@ -19,7 +19,7 @@ import { useStore } from "@nanostores/react";
 import { userTheme } from "~/store";
 
 const altchaConfig = JSON.stringify({
-  test: !!import.meta.env.ALTCHA_TEST,
+  test: !!import.meta.env.PUBLIC_ALTCHA_TEST,
 } as Configuration);
 
 const widgetDarkTheme = {
