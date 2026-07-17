@@ -8,6 +8,7 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    container: ubuntu
     strategy:
       matrix:
         node-version: [24]
