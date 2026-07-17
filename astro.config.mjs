@@ -15,8 +15,9 @@ if (process.argv[3] === "--node" || process.argv[4] === "--node") {
   adapter = node({ mode: "standalone" });
 }
 
-const { SITE_URL } =
-  loadEnv(process.env.SITE_URL, process.cwd(), "") || "https://localhost:4321/";
+const { SITE_URL } = process.env.SITE_URL
+  ? loadEnv(process.env.SITE_URL, process.cwd(), "")
+  : "http://localhost:4321/";
 
 export default defineConfig({
   image: {

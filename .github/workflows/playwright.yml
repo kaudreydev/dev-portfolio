@@ -8,6 +8,8 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      SITE_URL: http://localhost:4321/
     strategy:
       matrix:
         node-version: [24]
