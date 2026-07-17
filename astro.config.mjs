@@ -15,9 +15,7 @@ if (process.argv[3] === "--node" || process.argv[4] === "--node") {
   adapter = node({ mode: "standalone" });
 }
 
-const { SITE_URL } = process.env.SITE_URL
-  ? loadEnv(process.env.SITE_URL, process.cwd(), "")
-  : "http://localhost:4321/";
+const { SITE_URL } = loadEnv("", process.cwd(), "");
 
 export default defineConfig({
   image: {
@@ -41,7 +39,7 @@ export default defineConfig({
 
   output: "server",
 
-  site: SITE_URL,
+  site: SITE_URL || "http://localhost:4321/",
 
   vite: {
     plugins: [tailwindcss()],

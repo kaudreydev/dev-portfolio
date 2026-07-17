@@ -9,6 +9,7 @@ import "altcha/themes/business.css";
 // Importing altcha package will introduce a new element <altcha-widget>
 import "altcha";
 import type {
+  Configuration,
   CSSVariables,
   WidgetAttributes,
   WidgetMethods,
@@ -16,6 +17,10 @@ import type {
 import type {} from "altcha/types/react";
 import { useStore } from "@nanostores/react";
 import { userTheme } from "~/store";
+
+const altchaConfig = JSON.stringify({
+  test: !!import.meta.env.ALTCHA_TEST,
+} as Configuration);
 
 const widgetDarkTheme = {
   "--altcha-border-radius": "6px",
@@ -70,6 +75,7 @@ function Altcha({
     <altcha-widget
       ref={widgetRef}
       challenge="/api/challenge"
+      configuration={altchaConfig}
       display="standard"
       type="native"
       style={$userTheme === "dark" ? widgetDarkTheme : widgetLightTheme}

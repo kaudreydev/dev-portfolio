@@ -9,6 +9,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     env:
+      ALTCHA_TEST: true
       SITE_URL: http://localhost:4321/
     strategy:
       matrix:
