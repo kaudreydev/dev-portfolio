@@ -34,7 +34,7 @@ const anchorTests = anchors.map((anchor: string) => {
 
       await expect(navLink).toBeVisible();
 
-      await navLink.click();
+      await navLink.click({ delay: 2000 });
 
       if ("about" === anchor) {
         await expect(
