@@ -111,7 +111,10 @@
     - text: . Built with
     - link "Astro":
       - /url: https://astro.build/
-    - text: and
+    - text: ","
+    - link "React":
+      - /url: https://react.dev
+    - text: ", and"
     - link "Tailwind CSS":
       - /url: https://tailwindcss.com/
     - text: using the
