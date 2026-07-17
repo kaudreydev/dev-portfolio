@@ -1,4 +1,4 @@
-import { sendMessage } from "@lib/sendMessage";
+import sendMessage from "~/lib/send-message";
 import type { APIRoute } from "astro";
 import type { ContactMessage } from "~/types";
 

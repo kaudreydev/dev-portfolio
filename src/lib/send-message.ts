@@ -80,9 +80,9 @@ async function sendToSender({
   return data;
 }
 
-export const sendMessage = async (messageData: ContactMessage) => {
+export default async function sendMessage(messageData: ContactMessage) {
   const ownerResult = await sendToOwner(messageData);
   const senderResult = await sendToSender(messageData);
 
   return [ownerResult, senderResult];
-};
+}
