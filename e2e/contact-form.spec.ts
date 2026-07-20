@@ -116,10 +116,24 @@ test.describe("core functionality", () => {
       buttonSubmit,
     ] = getContactFormElements(page);
 
-    // Mock the api call
+    // Mock verify
+    await page.route("*/**/api/verify", async (route) => {
+      console.log(
+        "Mock Route /api/verify Activated - Request: ",
+        route.request().postData(),
+      );
+      const body = JSON.stringify({ verification: { verified: true } });
+      await route.fulfill({
+        body,
+        contentType: "application/json",
+        status: 200,
+      });
+    });
+
+    // Mock send
     await page.route("*/**/api/send", async (route) => {
       console.log(
-        "Mock Route Activated - Request: ",
+        "Mock Route /api/send Activated - Request: ",
         route.request().postData(),
       );
       const body = JSON.stringify({ data: [{ id: "test" }, { id: "test" }] });
