@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
+  "exclude": ["dist", "playwright-report", "test-results"],
   "compilerOptions": {
     "paths": {
       "~/*": ["./src/*"],
@@ -12,6 +12,7 @@
       "@lib/*": ["./src/lib/*"],
       "@pages/*": ["./src/pages/*"],
       "@styles/*": ["./src/styles/*"],
+      "@templates/*": ["./src/templates/*"],
       "@utils/*": ["./src/components/utils/*"]
     },
     "jsx": "react-jsx",

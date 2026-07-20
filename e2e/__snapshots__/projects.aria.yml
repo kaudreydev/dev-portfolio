@@ -57,7 +57,7 @@
           - listitem: Application designed from the ground-up to utilize a fresh UI design using Material UI and React.
           - listitem: Converted React project template to use Next.js with authentication via Graph API and Azure.
       - listitem:
-        - text: /Asset Search Application \(Phase 2\) for Oil & Gas Client CGI \(\d+\) Azure DevOps Elasticsearch Node\.js React SQL/
+        - text: /Asset Search Application \(Phase 2\) for Oil & Gas Client CGI \(\d+\) Angular Azure DevOps Elasticsearch Node\.js SQL/
         - list:
           - listitem: Contributed to the second phase of Asset Search application using Angular and Node.js with data via Denodo views using SQL queries and compiled into Elasticsearch.
           - listitem: Joined the project while underway after sudden departure of previous developer and was required to get up to speed and begin work almost immediately.
@@ -114,7 +114,10 @@
     - text: . Built with
     - link "Astro":
       - /url: https://astro.build/
-    - text: and
+    - text: ","
+    - link "React":
+      - /url: https://react.dev
+    - text: ", and"
     - link "Tailwind CSS":
       - /url: https://tailwindcss.com/
     - text: using the

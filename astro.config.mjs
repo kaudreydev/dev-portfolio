@@ -15,8 +15,16 @@ if (process.argv[3] === "--node" || process.argv[4] === "--node") {
   adapter = node({ mode: "standalone" });
 }
 
-const { SITE_URL } =
-  loadEnv(process.env.SITE_URL, process.cwd(), "") || "https://localhost:4321/";
+const site =
+  loadEnv("", process.cwd(), "")["SITE_URL"] || "http://localhost:4321/";
+
+const csp = [
+  `default-src * ${site};`,
+  `script-src 'self' 'unsafe-inline';`,
+  `style-src 'self' 'unsafe-inline';`,
+  `img-src 'self' ${site} https://unpkg.com/ data:;`,
+  `worker-src 'self' blob: ${site}`,
+].join(" ");
 
 export default defineConfig({
   image: {
@@ -29,7 +37,7 @@ export default defineConfig({
       "Cross-Origin-Embedder-Policy": "require-corp",
       "Cross-Origin-Opener-Policy": "same-origin",
       "Cross-Origin-Resource-Policy": "cross-origin",
-      "Content-Security-Policy": `default-src * ${SITE_URL}; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' ${SITE_URL} https://unpkg.com/ data:; worker-src 'self' blob: ${SITE_URL}`,
+      "Content-Security-Policy": csp,
       "Permissions-Policy": "geolocation=(), camera=(), microphone=()",
       "Referrer-Policy": "strict-origin-when-cross-origin",
       "Upgrade-Insecure-Requests": "1",
@@ -40,7 +48,7 @@ export default defineConfig({
 
   output: "server",
 
-  site: SITE_URL,
+  site,
 
   vite: {
     plugins: [tailwindcss()],

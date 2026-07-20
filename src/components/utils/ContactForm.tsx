@@ -203,7 +203,7 @@ export default function ContactForm() {
     <div>
       {!sent ? (
         <div>
-          <p className="mx-4 text-base">
+          <p className="mx-4 text-base" data-testid="contact-form-unsent">
             Feel free to send me a message using the contact form below and I'll
             get back to you as soon as possible!
           </p>
@@ -211,7 +211,7 @@ export default function ContactForm() {
         </div>
       ) : (
         <div>
-          <p className="mx-4 text-base">
+          <p className="mx-4 text-base" data-testid="contact-form-success">
             Thank you! Your message has been sent.
           </p>
         </div>

@@ -99,7 +99,13 @@
       "Joined the project while underway after sudden departure of previous developer and was required to get up to speed and begin work almost immediately.",
       "In addition to expanding the UI and available data, also worked to simplify and streamline the development process by creating tailored Node.js and PowerShell scripts and performing a detailed analysis and remediation of the environment setup process."
     ],
-    "technologies": ["Azure DevOps", "Elasticsearch", "Node.js", "React", "SQL"]
+    "technologies": [
+      "Angular",
+      "Azure DevOps",
+      "Elasticsearch",
+      "Node.js",
+      "SQL"
+    ]
   },
   {
     "id": "project-9",
