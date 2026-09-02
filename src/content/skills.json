@@ -82,5 +82,12 @@
     "icon": "dotnet",
     "level": 1,
     "years": "3+"
+  },
+  {
+    "id": "skill-13",
+    "name": "Python",
+    "icon": "python",
+    "level": 0,
+    "years": "<1"
   }
 ]
