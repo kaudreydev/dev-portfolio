@@ -1,7 +1,9 @@
+import type { CreateChallengeOptions, DeriveKeyFunction } from "altcha-lib";
 import type { verify } from "altcha-lib/frameworks/shared";
 import type {
   AltchaMiddlewareOptions,
   AltchaResult,
+  AltchaOptions as BaseAltchaOptions,
 } from "altcha-lib/frameworks/types";
 import type { APIContext } from "astro";
 import z from "astro/zod";
@@ -25,6 +27,18 @@ export type Altcha = {
   ) => Promise<Response | AltchaResult>;
   verify: typeof verify;
 };
+
+// Override the base type to ensure these options cannot be `undefined`,
+// because the `createChallenge` method expects them to be there since
+// we are not using Altcha's Sentinel feature.
+export interface AltchaOptions extends BaseAltchaOptions {
+  createChallengeParameters: () => Pick<
+    CreateChallengeOptions,
+    "algorithm" | "cost"
+  > &
+    Partial<CreateChallengeOptions>;
+  deriveKey: DeriveKeyFunction;
+}
 
 export type AltchaRequest = Request & { __altcha: AltchaResult };
 
