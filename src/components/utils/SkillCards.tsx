@@ -13,7 +13,7 @@ import type { Skill } from "~/types";
 import ProficiencyRating from "./ProficiencyRating";
 import SkillSort from "./SkillSort";
 
-const { sortBy } = lodash;
+const { chain, sortBy } = lodash;
 
 const iconPath = "https://unpkg.com/simple-icons@v16/icons/{icon}.svg";
 const iconSizeA = 96;
@@ -26,9 +26,49 @@ const tailwindBreakpoints = {
   xlarge: 1280,
 };
 
+function groupAndSort<T>(
+  collection: T[],
+  iteratee: keyof T | any, // using `any` becuase lodash types don't overlap
+): T[][] {
+  return chain(collection).groupBy(iteratee).sortBy(iteratee).reverse().value();
+}
+
 function parseYears(experience: string): number {
   const extractedYears = /([0-9]+)/.exec(experience)?.pop();
   return extractedYears ? parseInt(extractedYears, 0) : NaN;
+}
+
+function sortSkills(sortValue: string, skills: Skill[]): Skill[] {
+  let sortedSkills = [] as Skill[];
+  if ("abc" === sortValue) {
+    sortedSkills = sortBy(skills, ["name"]);
+  } else if ("years" === sortValue) {
+    // group and sort skills by experience
+    const skillsGroupedByExperience = groupAndSort(skills, (skill: Skill) =>
+      parseYears(skill.years),
+    );
+    // for each experience group, sort it by name and then
+    // add the skills to the final collection
+    for (const expGroup of skillsGroupedByExperience) {
+      sortedSkills.push(...sortBy(expGroup, "name"));
+    }
+  } else if ("level" === sortValue) {
+    // group and sort skills by proficiency level
+    const skillsGroupedByLevel = groupAndSort(skills, "level");
+    for (const levelGroup of skillsGroupedByLevel) {
+      // group and sort proficiency group skills by experience
+      const skillsGroupedByExperience = groupAndSort(
+        levelGroup,
+        (skill: Skill) => parseYears(skill.years),
+      );
+      // sort each experience group by name and then
+      // add the skills to the final collection
+      for (const expGroup of skillsGroupedByExperience) {
+        sortedSkills.push(...sortBy(expGroup, "name"));
+      }
+    }
+  }
+  return sortedSkills;
 }
 
 export default function SkillCards({ skills }: { skills: Skill[] }) {
@@ -44,24 +84,9 @@ export default function SkillCards({ skills }: { skills: Skill[] }) {
   useEffect(() => setIsDarkMode($userTheme === "dark"), [$userTheme]);
 
   useEffect(() => {
-    let nextSortedSkills;
+    const nextSortedSkills = sortSkills(sortValue, sortedSkills);
 
-    if ("abc" === sortValue) {
-      nextSortedSkills = sortBy(sortedSkills, ["name"]);
-    } else if ("years" === sortValue) {
-      nextSortedSkills = sortBy(sortedSkills, [
-        (skill: Skill) => parseYears(skill.years),
-        "name",
-      ]).reverse();
-    } else if ("level" === sortValue) {
-      nextSortedSkills = sortBy(sortedSkills, [
-        "level",
-        (skill: Skill) => parseYears(skill.years),
-        "name",
-      ]).reverse();
-    }
-
-    nextSortedSkills && setSortedSkills(nextSortedSkills);
+    setSortedSkills(nextSortedSkills);
   }, [sortValue]);
 
   useEffect(() => {
