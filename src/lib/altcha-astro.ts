@@ -7,11 +7,10 @@ import { CappedMap, createChallenge, randomInt } from "altcha-lib";
 import { deriveHmacKeySecret, verify } from "altcha-lib/frameworks/shared";
 import type {
   AltchaMiddlewareOptions,
-  AltchaOptions,
   AltchaResult,
 } from "altcha-lib/frameworks/types";
 import type { APIContext } from "astro";
-import type { AltchaRequest } from "~/types";
+import type { AltchaOptions, AltchaRequest } from "~/types";
 
 function getCookieFromRequest(req: AltchaRequest, name: string) {
   const header = req.headers.get("cookie");

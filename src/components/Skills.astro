@@ -15,6 +15,6 @@ const allSkills = skillsCollection.map(
     <span class="inline font-heading">Skills</span>
   </summary>
   <div id="skills-content">
-    <SkillCards skills={allSkills} client:load />
+    <SkillCards skills={allSkills} client:only="react" />
   </div>
 </details>

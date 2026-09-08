@@ -6,12 +6,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@components/ui/NavigationMenu";
-import { useViewport } from "@uireact/tools";
 import { Menu } from "lucide-react";
+import { useContext } from "react";
+import { useViewport, ViewportContext } from "~/hooks/useViewport";
 import type { NavItem } from "~/types";
 
 export default function Navigation({ nav }: { nav: NavItem[] }) {
-  const { isSmall } = useViewport();
+  useContext(ViewportContext);
+  const { isXSmall } = useViewport();
 
   const linkAction = (itemId: string) => {
     document.getElementById(`${itemId}-details`)?.setAttribute("open", "true");
@@ -69,5 +71,5 @@ export default function Navigation({ nav }: { nav: NavItem[] }) {
     </NavigationMenu>
   );
 
-  return isSmall ? mobileNav : desktopNav;
+  return isXSmall ? mobileNav : desktopNav;
 }

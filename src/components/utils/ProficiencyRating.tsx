@@ -21,7 +21,7 @@ export default function ProficiencyRating({
   );
 
   return (
-    <div className="flex rounded-2xl w-8 md:w-16 p-1 md:p-2 items-center">
+    <div className="flex rounded-2xl w-8 h-8 sm:w-16 sm:h-16 p-1 items-center">
       {proficiencyLevel === 0 && (
         <ProficiencyIcon
           className={iconClassName}

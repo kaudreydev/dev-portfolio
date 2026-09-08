@@ -15,9 +15,9 @@ const { nav } = Astro.props as Props;
   class="w-full justify-center flex items-center flex-col fixed top-0 left-1/2 -translate-x-1/2 bg-background z-40"
 >
   <div
-    class="flex flex-row justify-between md:justify-center md:my-6 pr-4 md:pr-0 w-full"
+    class="flex flex-row justify-between sm:justify-center lg:my-6 sm:pl-8 lg:pl-0 pr-4 lg:pr-0 w-full"
   >
-    <Navigation nav={nav} client:load />
+    <Navigation nav={nav} client:only="react" />
     <DarkModeSwitcher client:only="react" />
   </div>
   <div
