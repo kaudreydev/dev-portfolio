@@ -42,6 +42,25 @@ export interface AltchaOptions extends BaseAltchaOptions {
 
 export type AltchaRequest = Request & { __altcha: AltchaResult };
 
+/** Definition Types */
+
+export type UiBreakpoints = {
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+  "2xl"?: number;
+};
+
+export type ViewportState = {
+  isXSmall: boolean;
+  isSmall: boolean;
+  isMedium: boolean;
+  isLarge: boolean;
+  isXLarge: boolean;
+  is2XLarge: boolean;
+};
+
 /** Input Types */
 
 export const contactMessage = z.object({
