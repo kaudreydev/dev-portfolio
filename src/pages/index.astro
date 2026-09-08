@@ -23,7 +23,7 @@ const nav = [
   <div class="sr-only" id="start"></div>
   <Header nav={nav} />
   <main
-    class="justify-items-center w-full mt-36 md:mt-8 pb-10 md:py-30 md:px-50"
+    class="justify-items-center w-full mt-36 md:mt-8 pb-10 md:py-30 md:px-50 sm:px-20"
   >
     <About />
     <Skills />
@@ -60,6 +60,13 @@ const nav = [
         : "light",
     );
   }
+</script>
+
+<script>
+  import { appBreakpoints } from "~/app.config";
+  import { $uiBreakpoints } from "~/store";
+
+  $uiBreakpoints.set(appBreakpoints);
 </script>
 
 <script>

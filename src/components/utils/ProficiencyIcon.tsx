@@ -1,5 +1,5 @@
-import { useViewport } from "@uireact/tools";
 import { useEffect, useState } from "react";
+import { useViewport } from "~/hooks/useViewport";
 
 export enum ProficiencyLevel {
   Familiar,
