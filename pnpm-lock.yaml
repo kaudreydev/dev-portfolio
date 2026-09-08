@@ -44,9 +44,6 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.5
         version: 19.2.5(@types/react@19.2.18)
-      '@uireact/tools':
-        specifier: ^0.1.2
-        version: 0.1.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tslib@2.8.1)
       altcha:
         specifier: ^3.2.2
         version: 3.2.2
@@ -1499,13 +1496,6 @@ packages:
 
   '@types/ws@8.18.1':
     resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
-
-  '@uireact/tools@0.1.2':
-    resolution: {integrity: sha512-Lk+vLS5nVnrZSs68FWU0pauP5uKYyxSOSufjFYsDWWoX18jOjUxvtlcXNtjvBuyw/n+4C5oMNRA5QT+ISdvM+A==}
-    peerDependencies:
-      react: '>= 17 < 20'
-      react-dom: '>= 17 < 20'
-      tslib: ^2.5.0
 
   '@ungap/structured-clone@1.4.0':
     resolution: {integrity: sha512-1mEZtMKPM09vDmQt5y7YvmN2+DFTP7Tg0EWXdic8/C6VRnpb33e4ghisCIE3WZjsE2N8mf+QV1Zqh7ZFYLWInQ==}
@@ -5585,12 +5575,6 @@ snapshots:
   '@types/ws@8.18.1':
     dependencies:
       '@types/node': 25.9.5
-
-  '@uireact/tools@0.1.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tslib@2.8.1)':
-    dependencies:
-      react: 19.2.8
-      react-dom: 19.2.8(react@19.2.8)
-      tslib: 2.8.1
 
   '@ungap/structured-clone@1.4.0': {}
 
