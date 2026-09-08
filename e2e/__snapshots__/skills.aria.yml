@@ -48,28 +48,28 @@
       - option "Alphabetical"
       - option "Experience"
       - option "Proficiency" [selected]
-    - img "JavaScript icon"
-    - text: JavaScript
+    - img "CSS icon"
+    - text: CSS
     - img "Skill Level Expert"
     - text: /Expert \d+\+ Years/
     - img "HTML icon"
     - text: HTML
     - img "Skill Level Expert"
     - text: /Expert \d+\+ Years/
-    - img "CSS icon"
-    - text: CSS
+    - img "JavaScript icon"
+    - text: JavaScript
     - img "Skill Level Expert"
     - text: /Expert \d+\+ Years/
     - img "TypeScript icon"
     - text: TypeScript
     - img "Skill Level Expert"
     - text: /Expert \d+\+ Years/
-    - img "Node.js icon"
-    - text: Node.js
-    - img "Skill Level Proficient"
-    - text: /Skilled \d+\+ Years/
     - img "Git icon"
     - text: Git
+    - img "Skill Level Proficient"
+    - text: /Skilled \d+\+ Years/
+    - img "Node.js icon"
+    - text: Node.js
     - img "Skill Level Proficient"
     - text: /Skilled \d+\+ Years/
     - img "Angular icon"
@@ -84,16 +84,20 @@
     - text: Next.js
     - img "Skill Level Proficient"
     - text: Skilled 4+ Years
-    - img "Docker icon"
-    - text: Docker
-    - img "Skill Level Growing"
-    - text: Growing 3+ Years
     - img ".NET icon"
     - text: .NET
     - img "Skill Level Growing"
     - text: Growing 3+ Years
+    - img "Docker icon"
+    - text: Docker
+    - img "Skill Level Growing"
+    - text: Growing 3+ Years
     - img "Astro icon"
     - text: Astro
+    - img "Skill Level Familiar"
+    - text: Familiar <1 Years
+    - img "Python icon"
+    - text: Python
     - img "Skill Level Familiar"
     - text: Familiar <1 Years
   - heading "Experience" [level=2]
@@ -132,6 +136,14 @@
     - text: typeface, while headings use
     - link "Anybody":
       - /url: https://etceteratype.co/pages/anybody
+    - text: .
+  - paragraph:
+    - text: View the source code for this website on
+    - link "Codeberg":
+      - /url: https://codeberg.org/KAudreyDev/dev-portfolio
+    - text: or
+    - link "GitHub":
+      - /url: https://github.com/kaudreydev/dev-portfolio
     - text: .
   - paragraph: Lovingly created by a real human without the use of AI agents or tools.
 - region "Utilities":

@@ -136,6 +136,14 @@
     - link "Anybody":
       - /url: https://etceteratype.co/pages/anybody
     - text: .
+  - paragraph:
+    - text: View the source code for this website on
+    - link "Codeberg":
+      - /url: https://codeberg.org/KAudreyDev/dev-portfolio
+    - text: or
+    - link "GitHub":
+      - /url: https://github.com/kaudreydev/dev-portfolio
+    - text: .
   - paragraph: Lovingly created by a real human without the use of AI agents or tools.
 - region "Utilities":
   - link "Back to top":
